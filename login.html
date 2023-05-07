@@ -1,202 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de logueo</title>
-</head>
-<style>
-    /*Selector universal para calcular las dimensiones de los elementos HTML */
-    *{
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página de Inicio</title>
+    <style>
+      /*Selector universal para calcular las dimensiones de los elementos HTML */
+      * {
+        box-sizing: border-box;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        letter-spacing: 2.72px;
+      }
+
+      /*Selector para el elemento body (cuerpo de la página), el cual establecemos una fuente general para el contenido, y propiedades
+        para que la imagen de fondo se centre de manera correcta*/
+      body {
+        font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
-    }
+      }
 
-    /*Selector para el elemento body (cuerpo de la página), el cual establecemos una fuente general para el contenido, y propiedades
-    para que la imagen de fondo se centre de manera correcta*/
-    body{
-        font-family: Arial, Helvetica, sans-serif;
-        position: relative;
-    }
-
-    /*Este selector se vincula a la clase de la etiqueta section, el cual es el elemento padre del formulario, se establece
-    propiedades para poder verlo desde un navegador web*/
-    .form-login{
-        width: 400px;
-        height: 430px;
-        background: rgba(0, 0, 0, 0.5);
-        margin: auto;
-        margin-top: 100px;
-        box-shadow: 7px 13px 37px #000;
-        padding: 20px 30px;
-        border-top: 4px solid blue;
-        color: white;
-        text-align: center;
-        z-index: 2;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    /*Este selector hace referencia a la clase del elemento padre del formulario y a un elemento en específico, en estre caso es el encabezado
-    de "login"*/
-    .form-login h5{
-        margin: 0;
-        height: 40px;
-        margin-bottom: 10px;
-        border-bottom: 1px solid #fff;
-        font-size: 20px;
-    }
-
-    /*Este selector de clase hace referencia a las cajas de los inputs declarados en el html*/
-    .cajas{
-        width: 100%;
-        border: 1px solid blue;
-        margin-bottom: 15px;
-        padding: 11px 10px;
-        background: white;
-        font-size: 14px;
-        display: block;
-        color: black;
-    }
-
-    /*Este selector hace referencia a la clase del contenedor padre del formulario y especificamente al elemento span, para darle estilo
-    a la etiqueta de cada caja de texto.*/
-    .form-login span{
-        font-weight: bold;
-    }
-
-    /*Este selector hace referencia a la clase que esta vinculada con el botón, para darle un diseño mas personalizado de acuerdo a los colores
-    empleados*/
-    .boton{
-        width: 100%;
-        height: 40px;
-        background: blue;
-        border: none;
-        color: white;
-        margin-bottom: 16px;
-        cursor: pointer;
-    }
-
-    /*Selector utilizando una pseudoclase ":active", esto para poder darle un efecto al botón, el efecto del botón siempre se le eplicará siempre y cuanto
-    el botón este activo o que el ususario de click sobre el*/
-    .boton:active{
-        background-color: white;
-        color: blue;
-        border: 2px solid blue;
-    }
-
-    /*En este selector hace referencia siempre a la clase establecida al contenedor section y al elemento especifico de p (párrafo)*/
-    .form-login p{
-        height: 40px;
-        border-bottom: 1px solid #fff;
-    }
-
-    /*En este selector siempre se hace la referencia a la clase creada en el section y especificamente al elemento a (etiqueta para el enlace)*/
-    .form-login a{
-        color: white;
-        text-decoration: none;
-        font-size: 14px;
-    }
-
-    /*En este selector le damos un comportamiento con la pseudoclase hover para que se pueda subrayar el texto cuando este encima el puntero*/
-    .form-login a:hover{
-        text-decoration: underline;
-    }
-
-    /*Selector que hace referencia a la clase creada para la etiqueta img, en este caso para poder darle estilo al logo*/
-    .imagen-logo{
-        width: 100px;
-        height: 70px;
-        margin: auto;
-    }
-
-    .slider{
-    width: 100%;
-    height: 100%px;
-    overflow: hidden;
-    z-index: -3;
-    position: relative;
-    }
-    .slider ul{
+      /* Contenedor principal */
+      .container {
         display: flex;
-        animation: cambio 20s infinite alternate linear;
-        width: 400%;
-    }
-    .slider li{
+        justify-content: flex-end;
+        height: 100vh;
+        background: linear-gradient(to bottom right, #192a56, #273c75, #34495e);
+      }
+
+      /* Contenedor del formulario de inicio de sesión */
+      .login-container {
+        width: 50%;
+        max-width: 500px;
+        padding: 50px;
+        margin: 0 auto; /* Agrega esta línea para centrar horizontalmente el contenedor */
+      }
+
+      /* Estilos del logotipo */
+      .logo {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .logo img {
+        width: 100px;
+        height: 100px;
+        border-radius: 20px;
+      }
+
+      /* Estilos de los campos del formulario */
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        color: white;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      .form-group input {
         width: 100%;
-        list-style: none;
-    }
-    .slider img{
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        font-size: 16px;
+      }
+
+      /* Estilos del enlace "¿Olvidó su contraseña?" */
+      .forgot-password {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      /* Estilos del botón de inicio de sesión */
+      .login-button {
+        width: 100%;
+        padding: 10px;
+        background-color: rgb(3, 37, 65);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      /* Contenedor del slider */
+      .slider-container {
+        width: 50%;
+        max-width: 800px;
+        background-color: rgba(0, 0, 0, 0.8);
+        height: 100vh;
+        overflow: hidden; /* Asegura que solo se muestre el contenido dentro del slider */
+        position: relative; /* Permite posicionar los slides de forma absoluta */
+      }
+
+      /* Estilos del slider */
+      .slider {
         width: 100%;
         height: 100%;
-    }
-    @keyframes cambio{
-        0%{margin-left: 0;}
-        20%{margin-left: 0;}
-        
-        25%{margin-left: -100%;}
-        45%{margin-left: -100%;}
-        
-        50%{margin-left: -200%;}
-        70%{margin-left: -200%;}
-        
-        75%{margin-left: -300%;}
-        100%{margin-left: -300%;}
-    }
-    @media only screen and (min-width:320px) and (max-width:768px){
-    .slider, .slider ul, .slider img{
-        height: 100vh;
-    }
-    }
-</style>
-<body>
+        display: flex; /* Permite que los slides se muestren en una línea horizontal */
+      }
 
-    <div class="slider">
-        <ul>
-            <li>
-                <img src="./imgs/fondo1.jpeg">
-            </li>
-            <li>
-                <img src="./imgs/fondo2.jpg">
-            </li>
-            <li>
-                <img src="./imgs/fondo3.jpeg">
-            </li>
-            <li>
-                <img src="./imgs/fondo4.jpeg">
-            </li>
-        </ul>
-    </div>
+      /* Estilos de los slides */
+      .slide {
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0; /* Evita que los slides se encogan cuando hay muchos */
+        opacity: 0; /* Inicialmente, oculta los slides */
+        position: absolute; /* Permite superponer los slides */
+        top: 0;
+        left: 0;
+        animation: fade 8s infinite; /* Animación de fundido para cada slide */
+      }
+
+      /* Retraso de la animación para cada slide individual */
+      .slide:nth-child(1) {
+        animation-delay: 0s;
+      }
+
+      .slide:nth-child(2) {
+        animation-delay: 3s;
+      }
+
+      .slide:nth-child(3) {
+        animation-delay: 6s;
+      }
+
+      /* Estilos de la imagen dentro de los slides */
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ajusta la imagen al tamaño del slide */
+      }
+
+      /* Estilos para pantallas pequeñas (minimo ancho de 768px) (máximo ancho de 768px) */
+      @media only screen and (min-width: 320px) and (max-width: 768px) {
+        .container {
+          flex-direction: column-reverse;
+          align-items: center;
+        }
+
+        .login-container,
+        .slider-container {
+          width: 100%;
+          max-width: none;
+        }
+
+        .logo img {
+          width: 50px;
+          height: 50px;
+          border-radius: 20px;
+        }
+        .login-container {
+          padding-top: 20px;
+          padding-bottom: 20px;
+          padding-left: 100px;
+          padding-right: 100px;
+        }
+      }
+
+      /* Animación desenfoque para los slides */
+      @keyframes fade {
+        0% {
+          opacity: 0;
+        }
+        25% {
+          opacity: 1;
+        }
+        75% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <!--El section es el elemento padre del formulario el cual esta vinculado haci la clase "form-login"-->
-    <section class="form-login">
-        <h5>Login</h5>
-        <!--Imagen del logo de Avianca sin fondo-->
-        <img  class="imagen-logo" src="./imgs/icono3.png" alt="Logo de Avianca">
+    <section class="container">
+      <div class="login-container">
+        <div class="logo">
+            <!--Imagen del logo-->
+          <img src="./imgs/icono4.jpg" alt="Logo" />
+        </div>
         <form>
-            <!--Textbox para el usuario, utilizando label y un span-->
-            <label for="usuario">
-            <span>Usuario</span>
-            <!--La caja de texto esta vinculada hacia la clase "cajas", es requerido, brinda una ayuda al usuario con el atributo placeholder, 
-            utiliza pattern para validar el nombre del usuario con una expresión regular, al igual utiliza title para brindarle una ayuda al usuario
-            al momento de realizar un input-->
-            <input  class="cajas" type="text" name="usuario" required placeholder="Digita tu usuario aquí" pattern="[0-9]{8}-[0-9]{1}"  title="El DUI tiene que tener 8 carácteres,seguidos de un guión y otro número">
-            </label>        
-            <!--Textbox para la contraseña, utilizando label y un span-->
-            <label for="contrasena">
-            <span>Contraseña</span>
-            <!--La caja de texto esta vinculada hacia la clase "cajas", es requerido, brinda una ayuda al usuario con el atributo placeholder, 
-            utiliza pattern para validar la contraseña del usuario con una expresión regular, al igual utiliza title para brindarle una ayuda al usuario
-            al momento de realizar un input-->
-            <input class="cajas" type="password" name="contrasena" required placeholder="Digita tu contraseña aquí" pattern="(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{8,}" title="La contraseña debe tener al menos un carácter especial y al menos 8 carácteres">
-            </label>
-            <!--Botón para el envio de información, en este caso simulando un inicio de sesión de un ususario-->
-            <button class="boton" type="submit">Iniciar Sesión</button>
-            <p><a href="#">¿Olvidaste tu contraseña?</a></p>
+          <div class="form-group">
+            <!--Textbox para el usuario, utilizando label-->
+            <label for="username">Usuario</label>
+            <!--Cajas de texto para el usuario-->
+            <input type="text" id="username" placeholder="Ingrese su usuario" />
+          </div>
+          <div class="form-group">
+            <label for="password">Contraseña</label>
+            <!--Cajas de texto para la contraseña-->
+            <input
+              type="password"
+              id="password"
+              placeholder="Ingrese su contraseña"
+            />
+          </div>
+          <!-- Enlace para recuperación de contraseña-->
+          <div class="forgot-password">
+            <a href="#" style="color: white">¿Olvidó su contraseña?</a>
+          </div>
+          <!--Botón para el envio de información, en este caso simulando un inicio de sesión de un usuario-->
+          <button class="login-button" type="submit">Iniciar sesión</button>
         </form>
+      </div>
+      
+      <!--Contenedor para el slider-->
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slide">
+            <img src="./imgs/fondo1.jpeg" alt="Slide 1" />
+          </div>
+          <div class="slide">
+            <img src="./imgs/fondo2.jpg" alt="Slide 2" />
+          </div>
+          <div class="slide">
+            <img src="./imgs/fondo3.jpeg" alt="Slide 3" />
+          </div>
+        </div>
+      </div>
     </section>
-</body>
+  </body>
 </html>
