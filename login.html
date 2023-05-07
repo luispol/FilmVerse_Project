@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de logueo</title>
+</head>
+<style>
+    /*Selector universal para calcular las dimensiones de los elementos HTML */
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /*Selector para el elemento body (cuerpo de la página), el cual establecemos una fuente general para el contenido, y propiedades
+    para que la imagen de fondo se centre de manera correcta*/
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        position: relative;
+    }
+
+    /*Este selector se vincula a la clase de la etiqueta section, el cual es el elemento padre del formulario, se establece
+    propiedades para poder verlo desde un navegador web*/
+    .form-login{
+        width: 400px;
+        height: 430px;
+        background: rgba(0, 0, 0, 0.5);
+        margin: auto;
+        margin-top: 100px;
+        box-shadow: 7px 13px 37px #000;
+        padding: 20px 30px;
+        border-top: 4px solid blue;
+        color: white;
+        text-align: center;
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /*Este selector hace referencia a la clase del elemento padre del formulario y a un elemento en específico, en estre caso es el encabezado
+    de "login"*/
+    .form-login h5{
+        margin: 0;
+        height: 40px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #fff;
+        font-size: 20px;
+    }
+
+    /*Este selector de clase hace referencia a las cajas de los inputs declarados en el html*/
+    .cajas{
+        width: 100%;
+        border: 1px solid blue;
+        margin-bottom: 15px;
+        padding: 11px 10px;
+        background: white;
+        font-size: 14px;
+        display: block;
+        color: black;
+    }
+
+    /*Este selector hace referencia a la clase del contenedor padre del formulario y especificamente al elemento span, para darle estilo
+    a la etiqueta de cada caja de texto.*/
+    .form-login span{
+        font-weight: bold;
+    }
+
+    /*Este selector hace referencia a la clase que esta vinculada con el botón, para darle un diseño mas personalizado de acuerdo a los colores
+    empleados*/
+    .boton{
+        width: 100%;
+        height: 40px;
+        background: blue;
+        border: none;
+        color: white;
+        margin-bottom: 16px;
+        cursor: pointer;
+    }
+
+    /*Selector utilizando una pseudoclase ":active", esto para poder darle un efecto al botón, el efecto del botón siempre se le eplicará siempre y cuanto
+    el botón este activo o que el ususario de click sobre el*/
+    .boton:active{
+        background-color: white;
+        color: blue;
+        border: 2px solid blue;
+    }
+
+    /*En este selector hace referencia siempre a la clase establecida al contenedor section y al elemento especifico de p (párrafo)*/
+    .form-login p{
+        height: 40px;
+        border-bottom: 1px solid #fff;
+    }
+
+    /*En este selector siempre se hace la referencia a la clase creada en el section y especificamente al elemento a (etiqueta para el enlace)*/
+    .form-login a{
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    /*En este selector le damos un comportamiento con la pseudoclase hover para que se pueda subrayar el texto cuando este encima el puntero*/
+    .form-login a:hover{
+        text-decoration: underline;
+    }
+
+    /*Selector que hace referencia a la clase creada para la etiqueta img, en este caso para poder darle estilo al logo*/
+    .imagen-logo{
+        width: 100px;
+        height: 70px;
+        margin: auto;
+    }
+
+    .slider{
+    width: 100%;
+    height: 100%px;
+    overflow: hidden;
+    z-index: -3;
+    position: relative;
+    }
+    .slider ul{
+        display: flex;
+        animation: cambio 20s infinite alternate linear;
+        width: 400%;
+    }
+    .slider li{
+        width: 100%;
+        list-style: none;
+    }
+    .slider img{
+        width: 100%;
+        height: 100%;
+    }
+    @keyframes cambio{
+        0%{margin-left: 0;}
+        20%{margin-left: 0;}
+        
+        25%{margin-left: -100%;}
+        45%{margin-left: -100%;}
+        
+        50%{margin-left: -200%;}
+        70%{margin-left: -200%;}
+        
+        75%{margin-left: -300%;}
+        100%{margin-left: -300%;}
+    }
+    @media only screen and (min-width:320px) and (max-width:768px){
+    .slider, .slider ul, .slider img{
+        height: 100vh;
+    }
+    }
+</style>
+<body>
+
+    <div class="slider">
+        <ul>
+            <li>
+                <img src="./imgs/fondo1.jpeg">
+            </li>
+            <li>
+                <img src="./imgs/fondo2.jpg">
+            </li>
+            <li>
+                <img src="./imgs/fondo3.jpeg">
+            </li>
+            <li>
+                <img src="./imgs/fondo4.jpeg">
+            </li>
+        </ul>
+    </div>
+    <!--El section es el elemento padre del formulario el cual esta vinculado haci la clase "form-login"-->
+    <section class="form-login">
+        <h5>Login</h5>
+        <!--Imagen del logo de Avianca sin fondo-->
+        <img  class="imagen-logo" src="./imgs/icono3.png" alt="Logo de Avianca">
+        <form>
+            <!--Textbox para el usuario, utilizando label y un span-->
+            <label for="usuario">
+            <span>Usuario</span>
+            <!--La caja de texto esta vinculada hacia la clase "cajas", es requerido, brinda una ayuda al usuario con el atributo placeholder, 
+            utiliza pattern para validar el nombre del usuario con una expresión regular, al igual utiliza title para brindarle una ayuda al usuario
+            al momento de realizar un input-->
+            <input  class="cajas" type="text" name="usuario" required placeholder="Digita tu usuario aquí" pattern="[0-9]{8}-[0-9]{1}"  title="El DUI tiene que tener 8 carácteres,seguidos de un guión y otro número">
+            </label>        
+            <!--Textbox para la contraseña, utilizando label y un span-->
+            <label for="contrasena">
+            <span>Contraseña</span>
+            <!--La caja de texto esta vinculada hacia la clase "cajas", es requerido, brinda una ayuda al usuario con el atributo placeholder, 
+            utiliza pattern para validar la contraseña del usuario con una expresión regular, al igual utiliza title para brindarle una ayuda al usuario
+            al momento de realizar un input-->
+            <input class="cajas" type="password" name="contrasena" required placeholder="Digita tu contraseña aquí" pattern="(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{8,}" title="La contraseña debe tener al menos un carácter especial y al menos 8 carácteres">
+            </label>
+            <!--Botón para el envio de información, en este caso simulando un inicio de sesión de un ususario-->
+            <button class="boton" type="submit">Iniciar Sesión</button>
+            <p><a href="#">¿Olvidaste tu contraseña?</a></p>
+        </form>
+    </section>
+</body>
+</html>

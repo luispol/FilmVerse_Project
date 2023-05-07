@@ -1,0 +1,106 @@
+/*Selector universal*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Bloque para establecer las variables*/
+:root{
+    --azul: blue;
+    --fondo: #141414; 
+}
+
+/*Bloque de estilo para el cuerpo de la pagina*/
+body{
+    background: var(--fondo);
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*Bloque de estilo para el contenedor de la barra de navegacion y de mas contneido dentro del body*/
+.contenedor{
+    width: 90%;
+    margin: auto;
+}
+
+/*Estilos para la etiqueta header*/
+header{
+    padding: 30px 0;
+}
+
+/*Estilos para el contenedor de la etiqueta header*/
+header .contenedor{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Estilo para el logotipo de FilmVerse*/
+header .logotipo{
+    width: 80px;
+    height: 50px;
+}
+
+/*Estilos para las opciones de la barra de navegacion*/
+header nav a{
+    color: #AAA;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+/*Bloque compuesto de estilos para darle efecto de sombreado a loas opciones de la barra de navegacion*/
+header nav a:hover,
+header nav a.activo{
+    color: #fff;
+}
+
+/*----Zona de busqueda-----*/
+.seccion-busqueda{
+    font-size: 16px;
+    min-height: 40.62em;
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0,.50) 0%, rgba(0,0,0,.50) 100%), url(../imgs/ImagenBusqueda.jpg);
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 3.12em;
+
+}
+
+.seccion-busqueda .encabezados{
+    width: 90%;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+
+.contenedor-busqueda {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 9fr 3fr;
+    gap: 1.2em;
+}
+
+.contenedor-busqueda input, .contenedor-busqueda button{
+    font-size: 0.9em;
+    outline: none;
+    border-radius: 0.3em;
+}
+
+.contenedor-busqueda input{
+    background-color: #fff;
+    border: 1px solid #a0a0a0;
+    color: black;
+    padding: 0.7em;
+}
+
+.contenedor-busqueda input:focus{
+    border-color: #fff;
+}
+
+.contenedor-busqueda button{
+    background-color: blue;
+    border: none;
+    cursor: pointer;
+}
+
