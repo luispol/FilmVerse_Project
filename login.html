@@ -118,15 +118,15 @@
 
       /* Retraso de la animación para cada slide individual */
       .slide:nth-child(1) {
-        animation-delay: 0s;
+        animation: fade 9s infinite;
       }
 
       .slide:nth-child(2) {
-        animation-delay: 3s;
+        animation: fade 9s infinite 3s;
       }
 
       .slide:nth-child(3) {
-        animation-delay: 6s;
+        animation: fade 9s infinite 6s;
       }
 
       /* Estilos de la imagen dentro de los slides */
@@ -162,16 +162,19 @@
         }
       }
 
-      /* Animación desenfoque para los slides */
+      /* Animación de fundido para los slides */
       @keyframes fade {
         0% {
           opacity: 0;
         }
-        25% {
+        20% {
           opacity: 1;
         }
-        75% {
+        40% {
           opacity: 1;
+        }
+        60% {
+          opacity: 0;
         }
         100% {
           opacity: 0;
@@ -184,7 +187,7 @@
     <section class="container">
       <div class="login-container">
         <div class="logo">
-            <!--Imagen del logo-->
+          <!--Imagen del logo-->
           <img src="./imgs/icono4.jpg" alt="Logo" />
         </div>
         <form>
@@ -211,7 +214,7 @@
           <button class="login-button" type="submit">Iniciar sesión</button>
         </form>
       </div>
-      
+
       <!--Contenedor para el slider-->
       <div class="slider-container">
         <div class="slider">
