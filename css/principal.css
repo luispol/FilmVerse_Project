@@ -80,7 +80,7 @@ header nav a.activo {
   background-position: center center;
   background-size: cover;
   padding: 20px;
-  margin-bottom: 10em;
+
 }
 
 .seccion-busqueda .encabezados {
@@ -122,4 +122,69 @@ header nav a.activo {
   border: none;
   cursor: pointer;
   color: white;
+}
+
+.titulo-contenedor-peliculas{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-style: bold;
+  text-align: center;
+}
+
+
+.contenedor-peliculas{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin-left: 15px;
+  scroll-snap-type: x mandatory; /* Aplicamos el tipo de snap en x */
+  scroll-behavior: smooth; /* Hace que el scroll se vea más suave */
+  -ms-overflow-style: none;  /* Oculta la barra de scroll en navegadores Edge y IE */
+  scrollbar-width: none;  /* Oculta la barra de scroll en Firefox */
+}
+
+.contenedor-peliculas:hover{
+  overflow-x: auto; /* Hacemos que el scroll aparezca cuando el usuario pase el cursor sobre el contenedor */
+}
+
+.contenedor-peliculas::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+  background-color: transparent;
+}
+
+.contenedor-peliculas::-webkit-scrollbar-thumb {
+  background-color: #00ffff;
+  border-radius: 10px;
+  border: 2px solid #00ffff;
+}
+
+
+
+.pelicula{
+  flex: 0 0 auto;
+  margin-right: 20px;
+  width: 250px;
+  color: #fff;
+}
+
+.pelicula img{
+  width: 150px;
+  min-height: calc(150px * 1.5);
+  height: calc(150px * 1.5);
+  border-radius: 8px;
+}
+
+.pelicula h3{
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+
+}
+
+.pelicula p{
+  font-size: 14px;
+  line-height: 1.5;
 }
