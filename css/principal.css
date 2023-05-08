@@ -1,4 +1,4 @@
-/*Selector universal*/
+/*Selector universal para calcular las dimensiones de los elementos HTML */
 * {
   padding: 0;
   margin: 0;
@@ -6,12 +6,19 @@
   /*Espacio entre letras*/
   letter-spacing: 2px;
   font-family: "Cinzel", serif;
+  list-style: none;
+  text-decoration: none;
+  scroll-padding-top: 2rem;
+  scroll-behavior: smooth;
 }
 
 /*Bloque para establecer las variables*/
 :root {
+  /*Paleta de colores*/
   --azul: blue;
-  --fondoImagen: rgb(3, 37, 65);
+  --main-color: rgb(3, 37, 65);
+  --navbar-color: rgba(3, 37, 65, 0.8);
+  --card-color: rgba(3, 37, 65, 0.5);
   --fondoAzuladoOscuro: linear-gradient(
     to bottom right,
     #03133f,
@@ -24,102 +31,175 @@
     #2045ad,
     #31567b
   );
+
+  --text-color: white;
 }
 
 /*Bloque de estilo para el cuerpo de la pagina*/
 body {
   background: var(--fondoAzuladoOscuro);
+  color: var(--text-color);
 }
 
-/*Bloque de estilo para el contenedor de la barra de navegacion y de mas contneido dentro del body*/
-.contenedor {
-  width: 90%;
-  margin: auto;
-}
-
-/*ESTILO PARA NAVBAR Y PAGINA PRESENTACION*/
-/*Estilos para la etiqueta header*/
+/*---------- HEADER AND NAVBAR ---------*/
 header {
-  padding: 10px 0;
-}
-
-/*Estilos para el contenedor de la etiqueta header*/
-header .contenedor {
+  position: fixed;
+  width: 100%;
+  height: 10%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 0px 60px;
+  transition: 0.5s;
+  background: var(--navbar-color);
 }
 
-/*Estilo para el logotipo de FilmVerse*/
-header .logotipo {
-  width: 50px;
-  height: 50px;
-  border-radius: 20px;
-}
-
-/*Estilos para las opciones de la barra de navegacion*/
-header nav a {
-  color: #aaa;
-  text-decoration: none;
-  margin-right: 20px;
-}
-
-/*Bloque compuesto de estilos para darle efecto de sombreado a loas opciones de la barra de navegacion*/
-header nav a:hover,
-header nav a.activo {
-  color: #fff;
-}
-
-/*----Zona de busqueda-----*/
-.seccion-busqueda {
-  font-size: 16px;
-  min-height: 40.62em;
-  color: #fff;
-  background: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%),
-    url(../imgs/sfjqJDmNqMIImO5khiddb9TARvO.jpg);
-  background-position: center center;
-  background-size: cover;
+.logo {
   padding: 20px;
-  margin-bottom: 10em;
+  width: 8%;
+  height: 140%;
+  border-radius: 40px;
+  z-index: -6;
 }
 
-.seccion-busqueda .encabezados {
-  width: 85%;
-  /* margin-top: 10px; */
-  margin-left: 10%;
-  /* margin-right: 75px; */
-  margin-bottom: 15px;
+.navbar {
+  display: flex;
+  column-gap: 5rem;
 }
 
-.contenedor-busqueda {
-  width: 90%;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 9fr 3fr;
-  gap: 1.2em;
+.navbar li {
+  position: relative;
 }
 
-.contenedor-busqueda input,
-.contenedor-busqueda button {
-  font-size: 0.9em;
-  outline: none;
-  border-radius: 0.3em;
+.navbar a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color);
 }
 
-.contenedor-busqueda input {
-  background-color: #fff;
-  border: 1px solid #a0a0a0;
-  color: black;
-  padding: 0.7em;
+.navbar a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: var(--azul);
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transition: 0.4s all linear;
 }
 
-.contenedor-busqueda input:focus {
-  border-color: #fff;
+.navbar a:hover::after,
+.navbar .home-active::after {
+  width: 100%;
 }
 
-.contenedor-busqueda button {
-  background: var(--fondoAzuladoClaro);
-  border: none;
+#menu-icon {
+  font-size: 24px;
   cursor: pointer;
-  color: white;
+  z-index: 1000001;
+  display: none;
+}
+
+.btn {
+  padding: 0.7rem 1.4rem;
+  background: var(--fondoAzuladoOscuro);
+  color: var(--text-color);
+  font-weight: 400;
+  border-radius: 0.5rem;
+}
+
+.btn:hover {
+  background: var(--fondoAzuladoClaro);
+}
+
+/* ----- SWIPER SLIDE ------ */
+
+.slide-container {
+  width: 100%;
+  min-height: 640px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(2, 3, 7, 0.4);
+}
+
+.slide-container img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+.swiper-pagination-bullet {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 0.2rem !important;
+  background: var(--text-color) !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  width: 1.5rem !important;
+  background: var(--azul) !important;
+}
+
+.home-text {
+  margin-top: 250px;
+  z-index: 1000;
+  padding: 0 150px;
+  text-shadow: 2px 2px 4px rgba(12, 1, 58, 0.4);
+}
+
+.card {
+  /* position: absolute; */
+  /* top: 0; */
+  /* left: 0; */
+  width: 30%;
+  height: 60%;
+  background-color: var(--card-color);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 40%);
+}
+
+.home-text span {
+  color: var(--text-color);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.home-text h1 {
+  color: var(--text-color);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* ------------ RESPONSIVE -----------*/
+@media (max-width: 1080px) {
+  .home-text {
+    padding: 0 100px;
+  }
+}
+
+@media (max-width: 991px) {
+  .header {
+    padding: 18px 4%;
+  }
+  section {
+    padding: 50px 4%;
+  }
+
+  .home-text {
+    padding: 0 4%;
+  }
+
+  .home-text h1 {
+    font-size: 2rem;
+  }
 }

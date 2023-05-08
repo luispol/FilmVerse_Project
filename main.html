@@ -20,50 +20,106 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100&family=Open+Sans:wght@400;600&display=swap"
       rel="stylesheet"
     />
+    <!-- ICONOS BOXICONS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
   </head>
 
   <body>
+    <!-- Navbar -->
     <header>
-      <div class="contenedor">
-        <img
-          src="./imgs/icono4.jpg"
-          alt="Icono de la pagina"
-          class="logotipo"
-        />
-        <nav>
-          <a href="#" class="activo">Start</a>
-          <a href="#">Movies</a>
-          <a href="#">Series</a>
-          <a href="#">Genres</a>
-          <a href="#">Login</a>
-        </nav>
-      </div>
-    </header>
+      <img src="./imgs/icono4.jpg" alt="" class="logo" />
+      <div class="bx bx-menu" id="menu-icon"></div>
 
+      <!-- MENU -->
+      <nav>
+        <ul class="navbar">
+          <li><a href="#home" class="home-active">Home</a></li>
+          <li><a href="#movies">Movies</a></li>
+          <li><a href="#coming">Series</a></li>
+          <li><a href="#Other">Genres</a></li>
+        </ul>
+      </nav>
+
+      <!--Icono encontrado en https://boxicons.com/-->
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAa1JREFUSEu1lD9PAkEQxd+QyN4cidR+BAustaCnoZZEewqtNYEaCm2x0BoTeyiopbHWQmu/ASawnEbG7GXBA+5g+Xfd5WbnN+/t3CPs+KEd90csQESy38PhBUSKIDoKhxB5BVEr7Xl3RNRzHWwOEGh9LiI3RJSNayIiPSK6UsxNF8gUwDQHcG8PtlNAY4+5a95/tM6PgCqAfChoNCp5mUxrGWQCMLYEWr/byctJEwZaG0jFKFHMh8vsmgDGBwG0FfPposkCrTtWSV0x1xbV/gMGgxcQ5VJAYWxL0kFrV8dcvPL9EzeA1n1TqJgzy3w13wPH+qhFKwNE5Mvz/QM3BStYNOz3i5RKPQHoKuaCG8BuB4CWYi65XLKIXHu+33AC2DX9IKJ9ADXFXI87GNm2z7TnHTuvqWkWkQ4BugLUOPKj/QJVsj8agKUranomRcWtVTInwlwsERlbKjafGor5McmmRWF3acMuZ8PuzYZdw9gS2KUIYwNoeszlOMjacT2TW4mQtQHhnWn9QMDZePI4JRsBXCAbA2IgU0m8FUAE8jwb81sDrLSmLmnqWrNzBX+52tgZCbUHFgAAAABJRU5ErkJggg=="
+      />
+      <a href="#" class="btn"> Sign In </a>
+    </header>
     <main>
-      <section class="Welcome">
-        <div class="seccion-busqueda">
-          <div class="encabezados">
-            <h3>Welcome</h3>
-            <p>
-              FilmVerse is a web page where you will can write your own opinion
-              about the most recent movies,<br />
-              or the movies that you like.
-            </p>
+      <!-- Home -->
+      <section class="home swiper" id="home">
+        <!-- Swiper -->
+        <div class="swiper-wrapper">
+          <!-- Box 1 -->
+
+          <!-- contenedor principal de la diapositiva. Es utilizado 
+            por la biblioteca Swiper para representar una 
+            sola diapositiva del slider. -->
+          <div class="swiper-slide slide-container">
+            <!-- Imagen -->
+            <img src="./imgs/movie1.jpg" alt="" />
+            <div class="home-text">
+              <div class="card">
+                <span>Disney Series</span>
+                <h1>
+                  Big <br />
+                  Hero
+                </h1>
+                <a href="#" class="btn">Review</a>
+              </div>
+            </div>
           </div>
-          <div class="contenedor-busqueda">
-            <input
-              type="text"
-              id="nombre-pelicula"
-              placeholder="Write a movie here..."
-              value="Dune"
-            />
-            <button id="bnt-busqueda">Search</button>
+
+          <!-- Box 2-->
+          <div class="swiper-slide slide-container">
+            <!-- Imagen -->
+            <img src="./imgs/movie2.jpg" alt="" />
+            <!-- Contenido de la tarjeta -->
+            <div class="home-text">
+              <!-- Tarjeta -->
+              <div class="card">
+                <span>Laika Studios</span>
+                <h1>
+                  Kubo <br />
+                  Two Strings
+                </h1>
+                <a href="#" class="btn">Review</a>
+              </div>
+            </div>
+          </div>
+          <!-- Box 3-->
+          <div class="swiper-slide slide-container">
+            <img src="./imgs/movie3.jpg" alt="" />
+            <div class="home-text">
+              <div class="card">
+                <span>Marvel Studios</span>
+                <h1>
+                  The <br />
+                  Avengers
+                </h1>
+                <a href="#" class="btn">Review</a>
+              </div>
+            </div>
           </div>
         </div>
+        <div class="swiper-pagination"></div>
       </section>
-
-      <section></section>
     </main>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Link to custom JS -->
+    <script src="./js/main.js"></script>
   </body>
 </html>
