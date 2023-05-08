@@ -3,18 +3,32 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  /*Espacio entre letras*/
+  letter-spacing: 2px;
+  font-family: "Cinzel", serif;
 }
 
 /*Bloque para establecer las variables*/
 :root {
   --azul: blue;
-  --fondo: #141414;
+  --fondoImagen: rgb(3, 37, 65);
+  --fondoAzuladoOscuro: linear-gradient(
+    to bottom right,
+    #03133f,
+    #14285e,
+    #203850
+  );
+  --fondoAzuladoClaro: linear-gradient(
+    to bottom right,
+    #092c8c,
+    #2045ad,
+    #31567b
+  );
 }
 
 /*Bloque de estilo para el cuerpo de la pagina*/
 body {
-  background: var(--fondo);
-  font-family: "Open Sans", sans-serif;
+  background: var(--fondoAzuladoOscuro);
 }
 
 /*Bloque de estilo para el contenedor de la barra de navegacion y de mas contneido dentro del body*/
@@ -23,9 +37,10 @@ body {
   margin: auto;
 }
 
+/*ESTILO PARA NAVBAR Y PAGINA PRESENTACION*/
 /*Estilos para la etiqueta header*/
 header {
-  padding: 30px 0;
+  padding: 10px 0;
 }
 
 /*Estilos para el contenedor de la etiqueta header*/
@@ -37,8 +52,9 @@ header .contenedor {
 
 /*Estilo para el logotipo de FilmVerse*/
 header .logotipo {
-  width: 80px;
+  width: 50px;
   height: 50px;
+  border-radius: 20px;
 }
 
 /*Estilos para las opciones de la barra de navegacion*/
@@ -60,15 +76,18 @@ header nav a.activo {
   min-height: 40.62em;
   color: #fff;
   background: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%),
-    url(../imgs/ImagenBusqueda.jpg);
+    url(../imgs/sfjqJDmNqMIImO5khiddb9TARvO.jpg);
   background-position: center center;
   background-size: cover;
-  margin-bottom: 3.12em;
+  padding: 20px;
+  margin-bottom: 10em;
 }
 
 .seccion-busqueda .encabezados {
-  width: 90%;
-  margin: auto;
+  width: 85%;
+  /* margin-top: 10px; */
+  margin-left: 10%;
+  /* margin-right: 75px; */
   margin-bottom: 15px;
 }
 
@@ -99,7 +118,8 @@ header nav a.activo {
 }
 
 .contenedor-busqueda button {
-  background-color: blue;
+  background: var(--fondoAzuladoClaro);
   border: none;
   cursor: pointer;
+  color: white;
 }
