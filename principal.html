@@ -20,53 +20,291 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100&family=Open+Sans:wght@400;600&display=swap"
       rel="stylesheet"
     />
+    <!-- ICONOS BOXICONS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
   </head>
 
   <body>
+    <!-- Navbar -->
     <header>
-      <div class="contenedor">
-        <img
-          src="./imgs/icono4.jpg"
-          alt="Icono de la pagina"
-          class="logotipo"
-        />
-        <nav>
-          <a href="#" class="activo">Start</a>
-          <a href="#">Movies</a>
-          <a href="#">Series</a>
-          <a href="#">Genres</a>
-          <a href="#">Login</a>
-        </nav>
-      </div>
-    </header>
+      <img src="./imgs/icono4.jpg" alt="" class="logo" />
+      <div class="bx bx-menu" id="menu-icon"></div>
 
+      <!-- MENU -->
+      <nav>
+        <ul class="navbar">
+          <li><a href="#home" class="home-active">Home</a></li>
+          <li><a href="#movies">Movies</a></li>
+          <li><a href="#coming">Series</a></li>
+          <li><a href="#Other">Genres</a></li>
+        </ul>
+      </nav>
+
+      <!--Icono encontrado en https://boxicons.com/-->
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAa1JREFUSEu1lD9PAkEQxd+QyN4cidR+BAustaCnoZZEewqtNYEaCm2x0BoTeyiopbHWQmu/ASawnEbG7GXBA+5g+Xfd5WbnN+/t3CPs+KEd90csQESy38PhBUSKIDoKhxB5BVEr7Xl3RNRzHWwOEGh9LiI3RJSNayIiPSK6UsxNF8gUwDQHcG8PtlNAY4+5a95/tM6PgCqAfChoNCp5mUxrGWQCMLYEWr/byctJEwZaG0jFKFHMh8vsmgDGBwG0FfPposkCrTtWSV0x1xbV/gMGgxcQ5VJAYWxL0kFrV8dcvPL9EzeA1n1TqJgzy3w13wPH+qhFKwNE5Mvz/QM3BStYNOz3i5RKPQHoKuaCG8BuB4CWYi65XLKIXHu+33AC2DX9IKJ9ADXFXI87GNm2z7TnHTuvqWkWkQ4BugLUOPKj/QJVsj8agKUranomRcWtVTInwlwsERlbKjafGor5McmmRWF3acMuZ8PuzYZdw9gS2KUIYwNoeszlOMjacT2TW4mQtQHhnWn9QMDZePI4JRsBXCAbA2IgU0m8FUAE8jwb81sDrLSmLmnqWrNzBX+52tgZCbUHFgAAAABJRU5ErkJggg=="
+      />
+      <a href="#" class="btn"> Sign In </a>
+    </header>
     <main>
-      <section class="Welcome">
-        <div class="seccion-busqueda">
-          <div class="encabezados">
-            <h3>Welcome</h3>
-            <p>
-              FilmVerse is a web page where you will can write your own opinion
-              about the most recent movies,<br />
-              or the movies that you like.
-            </p>
+      <!-- Home -->
+      <section class="home swiper" id="home">
+        <!-- Swiper -->
+        <div class="swiper-wrapper">
+          <!-- Box 1 -->
+
+          <!-- contenedor principal de la diapositiva. Es utilizado 
+            por la biblioteca Swiper para representar una 
+            sola diapositiva del slider. -->
+          <div class="swiper-slide slide-container">
+            <!-- Imagen -->
+            <img src="./imgs/movie1.jpg" alt="" />
+            <div class="home-text">
+              <div class="card">
+                <span>Disney Series</span>
+                <h1>
+                  Big <br />
+                  Hero
+                </h1>
+                <a href="#" class="btn">Review</a>
+              </div>
+            </div>
           </div>
-          <div class="contenedor-busqueda">
-            <input
-              type="text"
-              id="nombre-pelicula"
-              placeholder="Write a movie here..."
-              value="Dune"
-            />
-            <button id="bnt-busqueda">Search</button>
+
+          <!-- Box 2-->
+          <div class="swiper-slide slide-container">
+            <!-- Imagen -->
+            <img src="./imgs/movie2.jpg" alt="" />
+            <!-- Contenido de la tarjeta -->
+            <div class="home-text">
+              <!-- Tarjeta -->
+              <div class="card">
+                <span>Laika Studios</span>
+                <h1>
+                  Kubo <br />
+                  Two Strings
+                </h1>
+                <a href="#" class="btn">Review</a>
+              </div>
+            </div>
+          </div>
+          <!-- Box 3-->
+          <div class="swiper-slide slide-container">
+            <img src="./imgs/movie3.jpg" alt="" />
+            <div class="home-text">
+              <div class="card">
+                <span>Marvel Studios</span>
+                <h1>
+                  The <br />
+                  Avengers
+                </h1>
+                <a href="#" class="btn">Review</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </section>
+
+      <section class="titulo-contenedor-peliculas">
+        <h3>Trends</h3>
+      </section>
+
+      <!--Contenedor de peliculas-->
+      <section class="contenedor-peliculas">
+        <div class="pelicula">
+          <img src="./imgs/posteres-peliculas/posterDune.jpg" alt="Poster de Dune">
+          <h3>Dune</h3>
+          <p>15 sept 2021</p>
+        </div>
+
+        <div class="pelicula">
+          <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+          <h3>Avatar: El sentido del agua</h3>
+          <p>15 dec 2022</p>
+        </div>
+
+        <div class="pelicula">
+          <img src="./imgs/posteres-peliculas/posterDune.jpg" alt="Poster de Dune">
+          <h3>Dune</h3>
+          <p>15 sept 2021</p>
+        </div>
+
+        <div class="pelicula">
+          <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+          <h3>Avatar: El sentido del agua</h3>
+          <p>15 dec 2022</p>
+        </div>
+
+        <div class="pelicula">
+          <img src="./imgs/posteres-peliculas/posterDune.jpg" alt="Poster de Dune">
+          <h3>Dune</h3>
+          <p>15 sept 2021</p>
+        </div>
+
+        <div class="pelicula">
+          <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+          <h3>Avatar: El sentido del agua</h3>
+          <p>15 dec 2022</p>
+        </div>
+
+        <div class="pelicula">
+          <img src="./imgs/posteres-peliculas/posterDune.jpg" alt="Poster de Dune">
+          <h3>Dune</h3>
+          <p>15 sept 2021</p>
+        </div>
+
+        <div class="pelicula">
+          <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+          <h3>Avatar: El sentido del agua</h3>
+          <p>15 dec 2022</p>
+        </div>
+
+        <div class="pelicula">
+          <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+          <h3>Avatar: El sentido del agua</h3>
+          <p>15 dec 2022</p>
+        </div>
+
+        <div class="pelicula">
+          <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+          <h3>Avatar: El sentido del agua</h3>
+          <p>15 dec 2022</p>
+        </div>
+
+        <div class="pelicula">
+          <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+          <h3>Avatar: El sentido del agua</h3>
+          <p>15 dec 2022</p>
+        </div>
+
+        <div class="pelicula">
+          <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+          <h3>Avatar: El sentido del agua</h3>
+          <p>15 dec 2022</p>
+        </div>
+
+        <div class="pelicula">
+          <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+          <h3>Avatar: El sentido del agua</h3>
+          <p>15 dec 2022</p>
+        </div>
+
+        <div class="pelicula">
+          <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+          <h3>Avatar: El sentido del agua</h3>
+          <p>15 dec 2022</p>
+        </div>
+
+        <div class="pelicula">
+          <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+          <h3>Avatar: El sentido del agua</h3>
+          <p>15 dec 2022</p>
+        </div>
+
+        <div class="pelicula">
+          <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+          <h3>Avatar: El sentido del agua</h3>
+          <p>15 dec 2022</p>
+        </div>
+
+        <div class="pelicula">
+          <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+          <h3>Avatar: El sentido del agua</h3>
+          <p>15 dec 2022</p>
+        </div>
+
+        <div class="pelicula">
+          <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+          <h3>Avatar: El sentido del agua</h3>
+          <p>15 dec 2022</p>
+        </div>
+
+        <div class="pelicula">
+          <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+          <h3>Avatar: El sentido del agua</h3>
+          <p>15 dec 2022</p>
+        </div>
+
+        <div class="pelicula">
+          <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+          <h3>Avatar: El sentido del agua</h3>
+          <p>15 dec 2022</p>
+        </div>
+      </section>
+
+      <!--Seccion para informacion de registro-->
+      <section class="contenedor-registro">
+        <div class="columnas-registro_info">
+          <div class="columas-registro_info-contenido">
+            <div class="columna">
+              <div class="columna-titulo">
+                <p>Join today</p>
+              </div>
+              <div class="columna-contenido">
+                <div class="descripcion">
+                  <p>Welcome to filmverse! <br>
+                    Like you know, there are a lot of movies but is important to know what are <br>
+                    the opinion of the people. So, in this page you will can write your own opinion <br> 
+                    and see what are the opinion of other persons about the different movies that  <br>
+                    are in theaters or on digital platforms. So don't stay without commeting and <br>
+                    feel free to comment at your discretion what you think about a specific movie or serie.
+                  </p>
+                  <p class="boton">
+                    <a href="#" class="boton-registro">Sign Up</a>
+                  </p>
+                </div>
+                <div class="caracteristicas">
+                  <ul>
+                    <li>Comment your opinions on movies anywhere</li>
+                    <li>Look at other people's comments about your favorite movie</li>
+                    <li>Contribute and improve our database</li>
+                    <li>Enjoy FilmVerse without ads</li>
+                    <li>Look at the participating actors for the creation of each film</li>
+                    <li>Meet people with your same tastes in movie genres</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section>
-        
-      </section>
+      <!--Seccion del footer-->
+      <footer>
+        <div class="footer-izquierdo">
+          <a href="#"><img src="./imgs/icono4.jpg" alt="Logo de la empresa" class="logotipo-footer"></a>
+          <ul class="social-icons">
+            <li><a href="#"><img src="./imgs/iconoFacebook.png" alt="Facebook"></a></li>
+            <li><a href="#"><img src="./imgs/iconoInstagram.png" alt="Instagram"></a></li>
+            <li><a href="#"><img src="./imgs/iconoTwitter.png" alt="Twitter"></a></li>
+          </ul>
+        </div>
+        <div class="footer-derecho">
+          <p> By pass Carretera a Metapán y carretera antigua a San Salvador<br>
+          El Salvador, Santa ana<br>
+          Teléfono: 123-456-7890<br>
+          Email: support@filmverse.com</p>
+        </div>
+      </footer>
+
+
 
     </main>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Link to custom JS -->
+    <script src="./js/main.js"></script>
   </body>
 </html>
