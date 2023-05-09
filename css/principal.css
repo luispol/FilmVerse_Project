@@ -5,7 +5,7 @@
   box-sizing: border-box;
   /*Espacio entre letras*/
   letter-spacing: 2px;
-  font-family: "Cinzel", serif;
+  font-family: Arial, Helvetica, sans-serif ;
 }
 
 /*Bloque para establecer las variables*/
@@ -132,11 +132,11 @@ header nav a.activo {
   text-align: center;
 }
 
-
+/*Bloque de estilo para que muestren las peliculas principales en columnas*/
 .contenedor-peliculas{
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: hidden;
+  overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   margin-left: 15px;
   scroll-snap-type: x mandatory; /* Aplicamos el tipo de snap en x */
@@ -145,31 +145,35 @@ header nav a.activo {
   scrollbar-width: none;  /* Oculta la barra de scroll en Firefox */
 }
 
-.contenedor-peliculas:hover{
-  overflow-x: auto; /* Hacemos que el scroll aparezca cuando el usuario pase el cursor sobre el contenedor */
-}
 
+
+/*Bloque de estilo para personalizar el fondo scroll bar*/
 .contenedor-peliculas::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
   height: 10px;
   background-color: transparent;
 }
 
+/*Bloque de estilo para personalizar el scroll bar*/
 .contenedor-peliculas::-webkit-scrollbar-thumb {
-  background-color: #00ffff;
+  background-color: #000033;
   border-radius: 10px;
-  border: 2px solid #00ffff;
+  border: 2px solid #000033;
 }
 
-
-
+/*Bloque de estilo para las columas donde van aparecer las peliculas*/
 .pelicula{
   flex: 0 0 auto;
   margin-right: 20px;
-  width: 250px;
+  width: 25px;
   color: #fff;
+  flex-basis: 12%;
+  flex-grow: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
+/*Bloque de estilo para las imagenes de las peliculas*/
 .pelicula img{
   width: 150px;
   min-height: calc(150px * 1.5);
@@ -177,6 +181,7 @@ header nav a.activo {
   border-radius: 8px;
 }
 
+/*Bloque de estilo para el titulo de cada pelicula*/
 .pelicula h3{
   font-size: 18px;
   margin-top: 10px;
@@ -184,7 +189,139 @@ header nav a.activo {
 
 }
 
+/*Bloque de estilo para las fecha de estreno de cada pelicula*/
 .pelicula p{
   font-size: 14px;
   line-height: 1.5;
+}
+
+/*Bloque de estilo para la seccion de registro*/
+.contenedor-registro{
+  background-image: url(../imgs/imagenContenedorDescripcion.PNG);
+  background-position: center center;
+  background-size: cover;
+}
+
+.columnas-registro_info{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  
+}
+
+.columas-registro_info-contenido{
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #fff;
+  opacity: none;
+}
+
+.columna{
+  width: 100%;
+}
+
+.columna-titulo p{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.columna-contenido{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.descripcion{
+  width: 65%;
+  margin-right: 40px;
+}
+
+.boton{
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.boton-registro{
+  margin-top: 10px;
+  border: 2px solid var(--fondoAzuladoClaro);
+  border-radius: 5px;
+  padding: 8px 16px;
+  transition: linear .1s;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9em;
+  background: var(--fondoAzuladoClaro);
+}
+
+.caracteristicas{
+  width: auto;
+  margin: 0;
+}
+
+.caracteristicas ul{
+  list-style-type: disc;
+  list-style-position: outside;
+  margin-left: 20px;
+}
+
+
+/*Bloques de estilos para el footer*/
+footer {
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-izquierdo {
+  display: flex;
+  align-items: center;
+}
+
+.footer-izquierdo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logotipo-footer{
+  width: 50px;
+  height: 50px;
+  border-radius: 20px;
+}
+
+.social-icons {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-icons li {
+  margin-right: 10px;
+}
+
+.social-icons li a {
+  color: #666;
+  transition: all 0.2s ease-in-out;
+}
+
+.social-icons li a:hover {
+  color: #333;
+}
+
+.footer-derecho {
+  text-align: right;
 }
