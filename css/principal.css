@@ -4,9 +4,8 @@
   margin: 0;
   box-sizing: border-box;
   /*Espacio entre letras*/
-  letter-spacing: 2px;
+  /*letter-spacing: 2px;*/
   font-family: "Cinzel", serif;
-  list-style: none;
   text-decoration: none;
   scroll-padding-top: 2rem;
   scroll-behavior: smooth;
@@ -68,6 +67,7 @@ header {
 .navbar {
   display: flex;
   column-gap: 5rem;
+  list-style: none;
 }
 
 .navbar li {
@@ -353,9 +353,8 @@ header {
   margin: 0;
 }
 
-.caracteristicas ul{
-  list-style-type: disc !important;
-  list-style-position: outside !important;
+.lista-caracteristicas{
+  list-style: initial;
   margin-left: 20px;
 }
 
