@@ -123,7 +123,6 @@ header {
 
 
 /* MOVIE CARD INFORMATION */
-
 .card-movie-info {
   background: var(--movie-card-color) ;
   margin: 75px;
@@ -170,36 +169,39 @@ header {
 }
 
 
-
-
-/*Codigo para la sección*/
+/*Bloque de estilos para la sección de comentarios*/
 .comment-section {
   margin-top: 20px;
   margin: 75px;
   position: relative;
 }
 
+/*Bloque de estilo para la etiqueta h2 en la sección de comentarios*/
 .comment-section h2 {
   font-size: 24px;
   margin-bottom: 10px;
 }
 
+/*Bloque de estilos para el formulario de la seccion de comentarios*/
 .comment-section form {
   width: 100%;
   display: flex; /* Añade flexbox al formulario */
   flex-direction: column; /* Apila los elementos en columna */
 }
 
+/*Bloque de estilos donde va almacenar el textarea para que el usuario escriba su opinion*/
 .form-group {
   margin-bottom: 20px;
 }
 
+/*Bloque de estilos para la etiqueta label que esta dentro de la clase form-group*/
 .form-group label {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
+/*Bloque de estilo para la caja de texto donde el usuario escribirá su opinion*/
 .form-group textarea {
   width: 100%;
   padding: 10px;
@@ -208,12 +210,10 @@ header {
   border: 1px solid #ccc;
   background-color: #1E2747;
   color: white;
-}
-
-.form-group textarea {
   height: 120px;
 }
 
+/*Bloque de estilo para el botón de envio de los comnetarios de los usuarios*/
 .btn_comments {
   display: block;
   background: var(--fondoAzuladoClaro);
@@ -223,15 +223,17 @@ header {
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  position: absolute; /* Añade posición absoluta */
+  position: absolute; 
   right: 0; /* Posiciona el botón en la parte derecha */
   margin-top: 155px;
 }
 
+/*Bloque de estilo para garantizar que el botón haga efecto de sombredado al momento de pasar el mouse*/
 .btn_comments:hover {
   background: #0056b3;
 }
 
+/*Bloque de estilo para el contenedor de las peliculas a mostrar*/
 .titulo-contenedor-peliculas{
   margin-top: 20px;
   margin-bottom: 20px;
@@ -314,22 +316,26 @@ footer {
   background: rgb(4, 7, 22);
 }
 
+/*Bloque de estilo para la parte del lado izquierdo del footer*/
 .footer-izquierdo {
   display: flex;
   align-items: center;
 }
 
+/*Bloque de estilo para los iconos que se presentarán en la parte izquierda del footer*/
 .footer-izquierdo img {
   height: 40px;
   margin-right: 10px;
 }
 
+/*Bloque de estilo para el logotipo que se presenta en el footer*/
 .logotipo-footer{
   width: 50px;
   height: 50px;
   border-radius: 20px;
 }
 
+/*Bloque de estilo para los iconos de las redes sociales*/
 .social-icons {
   display: flex;
   list-style: none;
@@ -337,19 +343,18 @@ footer {
   padding: 0;
 }
 
+/*Bloque de estilo para la lista de los items, esto para dar formato a los iconos de las redes sociales*/
 .social-icons li {
   margin-right: 10px;
 }
 
+/*Bloque de estilo para las etiquetas anclas que están dentro de las etiquetas li*/
 .social-icons li a {
   color: #666;
   transition: all 0.2s ease-in-out;
 }
 
-.social-icons li a:hover {
-  color: #333;
-}
-
+/*Bloque de estilo para la parte derecha del footer*/
 .footer-derecho {
   text-align: right;
 }
