@@ -170,6 +170,139 @@ header {
 }
 
 
+
+
+/*Codigo para la sección*/
+.comment-section {
+  margin-top: 20px;
+  margin: 75px;
+  position: relative;
+}
+
+.comment-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.comment-section form {
+  width: 100%;
+  display: flex; /* Añade flexbox al formulario */
+  flex-direction: column; /* Apila los elementos en columna */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #1E2747;
+  color: white;
+}
+
+.form-group textarea {
+  height: 120px;
+}
+
+.btn_comments {
+  display: block;
+  background: var(--fondoAzuladoClaro);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  position: absolute; /* Añade posición absoluta */
+  right: 0; /* Posiciona el botón en la parte derecha */
+  margin-top: 155px;
+}
+
+.btn_comments:hover {
+  background: #0056b3;
+}
+
+.titulo-contenedor-peliculas{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-style: bold;
+  text-align: center;
+}
+
+/*Bloque de estilo para que muestren las peliculas principales en columnas*/
+.contenedor-peliculas{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-left: 15px;
+  scroll-snap-type: x mandatory; /* Aplicamos el tipo de snap en x */
+  scroll-behavior: smooth; /* Hace que el scroll se vea más suave */
+  -ms-overflow-style: none;  /* Oculta la barra de scroll en navegadores Edge y IE */
+  scrollbar-width: none;  /* Oculta la barra de scroll en Firefox */
+}
+
+
+
+/*Bloque de estilo para personalizar el fondo scroll bar*/
+.contenedor-peliculas::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+  background-color: transparent;
+}
+
+/*Bloque de estilo para personalizar el scroll bar*/
+.contenedor-peliculas::-webkit-scrollbar-thumb {
+  background-color: #000033;
+  border-radius: 10px;
+  border: 2px solid #000033;
+}
+
+/*Bloque de estilo para las columas donde van aparecer las peliculas*/
+.pelicula{
+  flex: 0 0 auto;
+  margin-right: 20px;
+  width: 25px;
+  color: #fff;
+  flex-basis: 12%;
+  flex-grow: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/*Bloque de estilo para las imagenes de las peliculas*/
+.pelicula img{
+  width: 150px;
+  min-height: calc(150px * 1.5);
+  height: calc(150px * 1.5);
+  border-radius: 8px;
+}
+
+/*Bloque de estilo para el titulo de cada pelicula*/
+.pelicula h3{
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+
+}
+
+/*Bloque de estilo para las fecha de estreno de cada pelicula*/
+.pelicula p{
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 /*Bloques de estilos para el footer*/
 footer {
   color: #fff;
@@ -178,6 +311,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: rgb(4, 7, 22);
 }
 
 .footer-izquierdo {
