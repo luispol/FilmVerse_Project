@@ -367,7 +367,9 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: rgb(4, 7, 22);
 }
+
 
 .footer-izquierdo {
   display: flex;

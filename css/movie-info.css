@@ -18,24 +18,18 @@
   --main-color: rgb(3, 37, 65);
   --navbar-color: rgba(3, 37, 65, 0.8);
   --card-color: rgba(3, 37, 65, 0.5);
-  --movie-card-color:linear-gradient(
-    to bottom right,
-    #092c8c,
-    #2045ad,
-    #2f7bc7
-  );
-  --fondoAzuladoOscuro: linear-gradient(
-    to bottom right,
-    #03133f,
-    #14285e,
-    #203850
-  );
-  --fondoAzuladoClaro: linear-gradient(
-    to bottom right,
-    #092c8c,
-    #2045ad,
-    #31567b
-  );
+  --movie-card-color: linear-gradient(to bottom right,
+      #092c8c,
+      #2045ad,
+      #2f7bc7);
+  --fondoAzuladoOscuro: linear-gradient(to bottom right,
+      #03133f,
+      #14285e,
+      #203850);
+  --fondoAzuladoClaro: linear-gradient(to bottom right,
+      #092c8c,
+      #2045ad,
+      #31567b);
 
   --text-color: white;
 }
@@ -46,7 +40,9 @@ body {
   color: var(--text-color);
 }
 
+
 /*---------- HEADER AND NAVBAR ---------*/
+/* Estilos para el encabezado */
 header {
   position: fixed;
   width: 100%;
@@ -62,6 +58,7 @@ header {
   background: var(--navbar-color);
 }
 
+/* Estilos para el logotipo */
 .logo {
   padding: 20px;
   width: 8%;
@@ -70,6 +67,7 @@ header {
   z-index: -6;
 }
 
+/* Estilos para la barra de navegación */
 .navbar {
   display: flex;
   column-gap: 5rem;
@@ -80,12 +78,14 @@ header {
   position: relative;
 }
 
+/* Estilos para los enlaces de navegación */
 .navbar a {
   font-size: 1rem;
   font-weight: 500;
   color: var(--text-color);
 }
 
+/* Estilos para la línea de resaltado después del enlace */
 .navbar a::after {
   content: "";
   width: 0;
@@ -97,11 +97,13 @@ header {
   transition: 0.4s all linear;
 }
 
+/* Estilos al pasar el cursor sobre los enlaces o cuando están activos */
 .navbar a:hover::after,
 .navbar .home-active::after {
   width: 100%;
 }
 
+/* Estilos para el ícono del menú */
 #menu-icon {
   font-size: 24px;
   cursor: pointer;
@@ -109,66 +111,253 @@ header {
   display: none;
 }
 
+/* Estilos para los botones */
 .btn {
   padding: 0.7rem 1.4rem;
-  background: var(--fondoAzuladoOscuro);
+  background-color: var(--navbar-color);
   color: var(--text-color);
   font-weight: 400;
   border-radius: 0.5rem;
 }
 
+/* Estilos al pasar el cursor sobre los botones */
 .btn:hover {
-  background: var(--fondoAzuladoClaro);
+  background: #0056b3;
 }
 
 
-/* MOVIE CARD INFORMATION */
-
+/* Movie Card Information Section */
 .card-movie-info {
-  background: var(--movie-card-color) ;
+  background: var(--movie-card-color);  /* Fondo del contenedor de la tarjeta de la película */
   margin: 75px;
-  border-radius: 75px;
+  border-radius: 45px;
 }
 
 .movie-card {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .card-img {
-  border-radius: 0 40px;
+  border-radius: 0 40px;  /* Borde redondeado en la esquina superior derecha de la imagen de la tarjeta */
   max-width: 30%;
   height: auto;
 }
 
 .movie-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 8% 0 0 5%;  /* Margen superior, no inferior, no izquierdo, margen derecho del 5% */
+}
+
+.info-details {
+  display: flex;
+  margin-top: 10px;
+  /* margin-bottom: 20px; */
+}
+
+.info-item {
+  text-align: center;
   margin-left: 20px;
+  margin-top: 5px;
 }
 
-/* Card movie info responsive Style */
-
-@media screen and (max-width: 600px) {
-  .card-movie-info {
-    margin: 10px;
-  }
-  
-  .card-img {
-    width: 100%;
-  }
+.overview {
+  margin: 8% 10% 0 10%;  /* Margen superior del 8%, sin margen inferior, margen izquierdo y derecho del 10% */
 }
 
-@media screen and (max-width: 400px) {
-  .movie-card {
-    flex-direction: column;
-  }
-  
-  .movie-info {
-    margin-left: 0;
-    margin-top: 10px;
-  }
+/* AREA DE INFORMACIÓN DE PELÍCULAS, titulos y metadata */
+.movie-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 30px;
 }
 
+.info-label {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.info-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.overview-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.overview-description {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* CONTENEDOR PARA IFRAME */
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.8);  /* Capa oscura de superposición */
+  backdrop-filter: blur(5px);  /* Aplicar desenfoque de fondo */
+  display: none;  /* Ocultar el contenedor del video por defecto */
+  justify-content: center;
+  align-items: center;
+}
+
+/*Tamaño de contenedor de video*/
+#video-iframe {
+  width: 80%;
+  height: 60vh;
+}
+
+/* -----SECCIÓN DE COMENTARIOS*/
+/*Bloque de estilos para la sección de comentarios*/
+.comment-section {
+  margin-top: 20px;
+  margin: 75px;
+  position: relative;
+}
+
+/*Bloque de estilo para la etiqueta h2 en la sección de comentarios*/
+.comment-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/*Bloque de estilos para el formulario de la seccion de comentarios*/
+.comment-section form {
+  width: 100%;
+  display: flex;
+  /* Añade flexbox al formulario */
+  flex-direction: column;
+  /* Apila los elementos en columna */
+}
+
+/*Bloque de estilos donde va almacenar el textarea para que el usuario escriba su opinion*/
+.form-group {
+  margin-bottom: 20px;
+}
+
+/*Bloque de estilos para la etiqueta label que esta dentro de la clase form-group*/
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/*Bloque de estilo para la caja de texto donde el usuario escribirá su opinion*/
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #1E2747;
+  color: white;
+  height: 120px;
+}
+
+/*Bloque de estilo para el botón de envio de los comnetarios de los usuarios*/
+.btn_comments {
+  display: block;
+  background: var(--fondoAzuladoClaro);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  /* Posiciona el botón en la parte derecha */
+  margin-top: 155px;
+}
+
+/*Bloque de estilo para garantizar que el botón haga efecto de sombredado al momento de pasar el mouse*/
+.btn_comments:hover {
+  background: #0056b3;
+}
+
+/*Bloque de estilo para el contenedor de las peliculas a mostrar*/
+.titulo-contenedor-peliculas {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-style: bold;
+  text-align: center;
+}
+
+/*Bloque de estilo para que muestren las peliculas principales en columnas*/
+.contenedor-peliculas {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-left: 15px;
+  scroll-snap-type: x mandatory;
+  /* Aplicamos el tipo de snap en x */
+  scroll-behavior: smooth;
+  /* Hace que el scroll se vea más suave */
+  -ms-overflow-style: none;
+  /* Oculta la barra de scroll en navegadores Edge y IE */
+  scrollbar-width: none;
+  /* Oculta la barra de scroll en Firefox */
+}
+
+
+
+/*Bloque de estilo para personalizar el fondo scroll bar*/
+.contenedor-peliculas::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+  background-color: transparent;
+}
+
+/*Bloque de estilo para personalizar el scroll bar*/
+.contenedor-peliculas::-webkit-scrollbar-thumb {
+  background-color: #000033;
+  border-radius: 10px;
+  border: 2px solid #000033;
+}
+
+/*Bloque de estilo para las columas donde van aparecer las peliculas*/
+.pelicula {
+  flex: 0 0 auto;
+  margin-right: 20px;
+  width: 25px;
+  color: #fff;
+  flex-basis: 12%;
+  flex-grow: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/*Bloque de estilo para las imagenes de las peliculas*/
+.pelicula img {
+  width: 150px;
+  min-height: calc(150px * 1.5);
+  height: calc(150px * 1.5);
+  border-radius: 8px;
+}
+
+/*Bloque de estilo para el titulo de cada pelicula*/
+.pelicula h3 {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+
+}
+
+/*Bloque de estilo para las fecha de estreno de cada pelicula*/
+.pelicula p {
+  font-size: 14px;
+  line-height: 1.5;
+}
 
 /*Bloques de estilos para el footer*/
 footer {
@@ -178,24 +367,29 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: rgb(4, 7, 22);
 }
 
+/*Bloque de estilo para la parte del lado izquierdo del footer*/
 .footer-izquierdo {
   display: flex;
   align-items: center;
 }
 
+/*Bloque de estilo para los iconos que se presentarán en la parte izquierda del footer*/
 .footer-izquierdo img {
   height: 40px;
   margin-right: 10px;
 }
 
-.logotipo-footer{
+/*Bloque de estilo para el logotipo que se presenta en el footer*/
+.logotipo-footer {
   width: 50px;
   height: 50px;
   border-radius: 20px;
 }
 
+/*Bloque de estilo para los iconos de las redes sociales*/
 .social-icons {
   display: flex;
   list-style: none;
@@ -203,19 +397,18 @@ footer {
   padding: 0;
 }
 
+/*Bloque de estilo para la lista de los items, esto para dar formato a los iconos de las redes sociales*/
 .social-icons li {
   margin-right: 10px;
 }
 
+/*Bloque de estilo para las etiquetas anclas que están dentro de las etiquetas li*/
 .social-icons li a {
   color: #666;
   transition: all 0.2s ease-in-out;
 }
 
-.social-icons li a:hover {
-  color: #333;
-}
-
+/*Bloque de estilo para la parte derecha del footer*/
 .footer-derecho {
   text-align: right;
 }
