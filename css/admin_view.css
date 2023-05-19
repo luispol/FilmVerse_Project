@@ -1,0 +1,126 @@
+/*Selector universal para calcular las dimensiones de los elementos HTML */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /*Espacio entre letras*/
+  /*letter-spacing: 2px;*/
+  font-family: "Cinzel", serif;
+  text-decoration: none;
+  scroll-padding-top: 2rem;
+  scroll-behavior: smooth;
+}
+
+/*Bloque para establecer las variables*/
+:root {
+  /*Paleta de colores*/
+  --azul: blue;
+  --main-color: rgb(3, 37, 65);
+  --navbar-color: rgba(3, 37, 65, 0.8);
+  --card-color: rgba(3, 37, 65, 0.5);
+  --movie-card-color: linear-gradient(to bottom right,
+      #092c8c,
+      #2045ad,
+      #2f7bc7);
+  --fondoAzuladoOscuro: linear-gradient(to bottom right,
+      #03133f,
+      #14285e,
+      #203850);
+  --fondoAzuladoClaro: linear-gradient(to bottom right,
+      #092c8c,
+      #2045ad,
+      #31567b);
+
+  --text-color: white;
+}
+
+/*Bloque de estilo para el cuerpo de la pagina*/
+body {
+  background: var(--fondoAzuladoOscuro) !important;
+  color: var(--text-color);
+}
+
+
+/*---------- HEADER AND NAVBAR ---------*/
+/* Estilos para el encabezado */
+header {
+  position: fixed;
+  width: 100%;
+  height: 10%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 60px;
+  transition: 0.5s;
+  background: var(--navbar-color);
+}
+
+/* Estilos para el logotipo */
+.logo {
+  padding: 20px;
+  width: 8%;
+  height: 140%;
+  border-radius: 40px;
+  z-index: -6;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+  display: flex;
+  column-gap: 5rem;
+  list-style: none;
+}
+
+.navbar li {
+  position: relative;
+}
+
+/* Estilos para los enlaces de navegación */
+.navbar a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* Estilos para la línea de resaltado después del enlace */
+.navbar a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: var(--azul);
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transition: 0.4s all linear;
+}
+
+/* Estilos al pasar el cursor sobre los enlaces o cuando están activos */
+.navbar a:hover::after,
+.navbar .home-active::after {
+  width: 100%;
+}
+
+/* Estilos para el ícono del menú */
+#menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000001;
+  display: none;
+}
+
+/* Estilos para los botones */
+.btn {
+  padding: 0.7rem 1.4rem;
+  background-color: var(--navbar-color);
+  color: var(--text-color);
+  font-weight: 400;
+  border-radius: 0.5rem;
+}
+
+/* Estilos al pasar el cursor sobre los botones */
+.btn:hover {
+  background: #0056b3;
+}

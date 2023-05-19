@@ -21,23 +21,33 @@ var swiper = new Swiper(".home", {
     }
   });
 
-
-// LOGICA PARA BOTÓN WATCH TRAILER
+  // LOGICA PARA BOTÓN WATCH TRAILER
 // Obtiene el elemento del botón "Watch Trailer" por su ID
 const watchTrailerBtn = document.getElementById('watch-trailer-btn');
-
 // Obtiene el contenedor del video por su ID
 const videoContainer = document.getElementById('video-container');
-
 // Agrega un event listener al botón "Watch Trailer" que se activa cuando se hace clic en él
 watchTrailerBtn.addEventListener('click', () => {
   // Muestra el contenedor del video estableciendo su estilo display como "flex"
   videoContainer.style.display = 'flex';
 });
-
 // Agrega un event listener al contenedor del video que se activa cuando se hace clic en él
 videoContainer.addEventListener('click', () => {
   // Oculta el contenedor del video estableciendo su estilo display como "none"
   videoContainer.style.display = 'none';
 });
 
+// DROPDOWN LOGIC
+
+const dropdownToggle = document.getElementById('dropdownMenuButton');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+
+dropdownToggle.addEventListener('click', () => {
+  dropdownMenu.classList.toggle('show');
+});
+
+window.addEventListener('click', (event) => {
+  if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+    dropdownMenu.classList.remove('show');
+  }
+});
