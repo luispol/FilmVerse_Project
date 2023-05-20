@@ -25,12 +25,13 @@
         <!--Imagen del logo-->
         <img src="./imgs/icono4.png" alt="Logo" />
       </div>
-      <form action="./principal.html">
+      <!--Cambiaria la logica para que la accion ocurra con la route create_user-->
+      <form action="./principal.html" method="post">
         <div class="form-group">
           <!--Textbox para el usuario, utilizando label-->
-          <label for="username">Usuario</label>
+          <label for="username">Nuevo usuario</label>
           <!--Cajas de texto para el usuario-->
-          <input type="text" id="username" placeholder="Ingrese su usuario" />
+          <input type="text" id="username" placeholder="Ingrese su nuevo usuario" />
         </div>
 
         <div class="form-group">
@@ -38,12 +39,18 @@
           <!--Cajas de texto para la contraseña-->
           <input type="password" id="password" placeholder="Ingrese su contraseña" />
         </div>
+
+        <div class="form-group">
+          <label for="password">Confirme su Contraseña</label>
+          <!--Cajas de texto para la contraseña-->
+          <input type="password" id="password" placeholder="Ingrese nuevamente su contraseña" />
+        </div>
         <!-- Enlace para recuperación de contraseña-->
         <div class="forgot-password">
-          <a href="#">¿Olvidó su contraseña?</a>
+          <a href="#">¿Ya tiene cuenta? - Ingrese aqui</a>
         </div>
         <!--Botón para el envio de información, en este caso simulando un inicio de sesión de un usuario-->
-        <button class="login-button" type="submit">Iniciar sesión</button>
+        <button class="login-button" type="submit">Crear usuario</button>
       </form>
     </div>
 

@@ -1,0 +1,235 @@
+/*Selector universal para calcular las dimensiones de los elementos HTML */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Cinzel", serif;
+    text-decoration: none;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+}
+
+/*Bloque para establecer las variables*/
+:root {
+    /*Paleta de colores*/
+    --azul: blue;
+    --main-color: rgb(3, 37, 65);
+    --navbar-color: rgba(3, 37, 65, 0.8);
+    --card-color: rgba(3, 37, 65, 0.5);
+    --fondoAzuladoOscuro: linear-gradient(to bottom right,
+            #03133f,
+            #14285e,
+            #203850);
+    --fondoAzuladoClaro: linear-gradient(to bottom right,
+            #092c8c,
+            #2045ad,
+            #31567b);
+
+    --text-color: white;
+}
+
+/*Selector para el elemento body (cuerpo de la página), el cual establecemos una fuente general para el contenido, y propiedades
+    para que la imagen de fondo se centre de manera correcta*/
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    justify-content: flex-end;
+    height: 100vh;
+    background: white;
+}
+
+/* Contenedor del formulario de inicio de sesión */
+.login-container {
+    width: 50%;
+    max-width: 500px;
+    padding: 50px;
+    margin: 0 auto;
+    /* Agrega esta línea para centrar horizontalmente el contenedor */
+}
+
+/* Estilos del logotipo */
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+}
+
+/* Estilos de los campos del formulario */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 15px;
+    display: block;
+    color: black;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    outline: none; /* Agrega esta línea para eliminar el contorno al hacer focus */
+}
+
+.form-group input:focus {
+    outline: none; /* Asegúrate de agregar esta línea también */
+    color:  gray;
+    font-weight: bold;
+}
+
+
+/* Estilos del enlace "¿Olvidó su contraseña?" */
+.forgot-password {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.forgot-password a{
+    color: #31567b;
+}
+
+.forgot-password a:hover{
+    color:#03133f;
+    font-weight: bolder;
+}
+
+/* Estilos del botón de inicio de sesión */
+.login-button {
+    width: 90%;
+    margin-left: 20px;
+    padding: 10px;
+    background: var(--fondoAzuladoOscuro);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: var(--fondoAzuladoClaro);
+}
+
+/* Contenedor del slider */
+.slider-container {
+    width: 50%;
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    overflow: hidden;
+    /* Asegura que solo se muestre el contenido dentro del slider */
+    position: relative;
+    /* Permite posicionar los slides de forma absoluta */
+    border-radius: 0 0 0 20px;
+}
+
+/* Estilos del slider */
+.slider {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* Permite que los slides se muestren en una línea horizontal */
+}
+
+/* Estilos de los slides */
+.slide {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    /* Evita que los slides se encogan cuando hay muchos */
+    opacity: 0;
+    /* Inicialmente, oculta los slides */
+    position: absolute;
+    /* Permite superponer los slides */
+    top: 0;
+    left: 0;
+    animation: fade 8s infinite;
+    /* Animación de fundido para cada slide */
+}
+
+/* Retraso de la animación para cada slide individual */
+.slide:nth-child(1) {
+    animation: fade 9s infinite;
+}
+
+.slide:nth-child(2) {
+    animation: fade 9s infinite 3s;
+}
+
+.slide:nth-child(3) {
+    animation: fade 9s infinite 6s;
+}
+
+/* Estilos de la imagen dentro de los slides */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ajusta la imagen al tamaño del slide */
+}
+
+/* Estilos para pantallas pequeñas (minimo ancho de 768px) (máximo ancho de 768px) */
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+    .container {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .login-container,
+    .slider-container {
+        width: 100%;
+        max-width: none;
+    }
+
+    .logo img {
+        width: 50px;
+        height: 50px;
+        border-radius: 20px;
+    }
+
+    .login-container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+/* Animación de fundido para los slides */
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
