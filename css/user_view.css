@@ -1,0 +1,306 @@
+
+/*Selector universal para calcular las dimensiones de los elementos HTML */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /*Espacio entre letras*/
+    /*letter-spacing: 2px;*/
+    font-family: "Cinzel", serif;
+    text-decoration: none;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+  }
+  
+  /*Bloque para establecer las variables*/
+:root {
+    /*Paleta de colores*/
+    --azul: blue;
+    --main-color: rgb(3, 37, 65);
+    --navbar-color: rgba(3, 37, 65, 0.8);
+    --card-color: rgba(3, 37, 65, 0.5);
+    --movie-card-color: linear-gradient(to bottom right,
+        #092c8c,
+        #2045ad,
+        #2f7bc7);
+    --fondoAzuladoOscuro: linear-gradient(to bottom right,
+        #03133f,
+        #14285e,
+        #203850);
+    --fondoAzuladoClaro: linear-gradient(to bottom right,
+        #092c8c,
+        #2045ad,
+        #31567b);
+  
+    --text-color: white;
+  }
+  
+  
+  /* Bloque de estilo para el cuerpo de la pagina */
+  body {
+    background: var(--fondoAzuladoOscuro);
+    color: var(--text-color);
+  }
+  
+  
+  /*---------- HEADER AND NAVBAR ---------*/
+  /* Estilos para el encabezado */
+  header {
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 60px;
+    transition: 0.5s;
+    background: var(--navbar-color);
+  }
+  
+  /* Estilos para el logotipo */
+  .logo {
+    padding: 20px;
+    width: 8%;
+    height: 140%;
+    border-radius: 40px;
+    z-index: -6;
+  }
+  
+  /* Estilos para la barra de navegación */
+  .navbar {
+    display: flex;
+    column-gap: 5rem;
+    list-style: none;
+  }
+  
+  .navbar li {
+    position: relative;
+  }
+  
+  /* Estilos para los enlaces de navegación */
+  .navbar a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color);
+  }
+  
+  /* Estilos para la línea de resaltado después del enlace */
+  .navbar a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: var(--azul);
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.4s all linear;
+  }
+  
+  /* Estilos al pasar el cursor sobre los enlaces o cuando están activos */
+  .navbar a:hover::after,
+  .navbar .home-active::after {
+    width: 100%;
+  }
+  
+  /* Estilos para el ícono del menú */
+  #menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000001;
+    display: none;
+  }
+  
+  /* Estilos para los botones */
+  .btn {
+    padding: 0.7rem 1.4rem;
+    background-color: var(--navbar-color);
+    color: var(--text-color);
+    font-weight: 400;
+    border-radius: 0.5rem;
+  }
+  
+  /* Estilos al pasar el cursor sobre los botones */
+  .btn:hover {
+    background: #0056b3;
+  }
+
+.contenedor {
+    margin-top: 130px;
+    margin-left: 185px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+.boton-crearPelicula{
+    width: 200px;
+    margin-bottom: 15px;
+    padding: 5px 12px;
+    background-color: var(--navbar-color);
+    color: var(--text-color);
+}
+
+.boton-crearPelicula:hover{
+    background: #0056b3;
+    cursor: pointer;
+}
+
+.contenedor-busqueda {
+    display: flex;
+    align-items: center;
+}
+
+.contenedor-busqueda input{
+    border: 2px solid #ced6e0;
+    font-size: 18px;
+    height: 50px;
+    width: 700px;
+    padding: 5px 12px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+  
+.boton-buscar {
+    margin-right: 50px;
+    background-color: var(--navbar-color);
+    color: var(--text-color);
+    font-weight: 400;
+    border-radius: 0.5rem;
+    width: 150px;
+    text-align: center;
+    padding: 5px 12px;
+  }
+  
+  /* Estilos al pasar el cursor sobre los botones */
+  .boton-buscar:hover {
+    background: #0056b3;
+    cursor: pointer;
+  }
+
+  .titulo-contenedor-peliculas{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-style: bold;
+    text-align: center;
+  }
+
+
+.contenedor-peliculas {
+  display: flex;
+  flex-wrap: wrap; /* Permitir que las películas se envuelvan en varias líneas */
+  overflow-y: auto; /* Habilitar el scroll vertical */
+  -webkit-overflow-scrolling: touch;
+  max-height: 900px; /* Ajusta esta altura según tus necesidades */
+  scroll-snap-type: y mandatory; /* Cambiar a scroll en el eje Y */
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  text-align: center;
+  margin-left: 150px;
+  position: relative;
+}
+
+/* Estilos de las películas */
+.pelicula {
+  width: 20%; 
+  margin-right: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  height: 358px;
+}
+
+/*Bloque de estilo para personalizar el fondo scroll bar*/
+.contenedor-peliculas::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+  background-color: transparent;
+}
+
+/*Bloque de estilo para personalizar el scroll bar*/
+.contenedor-peliculas::-webkit-scrollbar-thumb {
+  background-color: #000033;
+  border-radius: 10px;
+  border: 2px solid #000033;
+}
+
+
+
+/*Bloque de estilo para las imagenes de las peliculas*/
+.pelicula img{
+  width: 150px;
+  min-height: calc(150px * 1.5);
+  height: calc(150px * 1.5);
+  border-radius: 8px;
+}
+
+/*Bloque de estilo para el titulo de cada pelicula*/
+.pelicula h3{
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+
+}
+
+/*Bloque de estilo para las fecha de estreno de cada pelicula*/
+.pelicula p{
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/*Bloques de estilos para el footer*/
+footer {
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(4, 7, 22);
+}
+
+/*Bloque de estilo para la parte del lado izquierdo del footer*/
+.footer-izquierdo {
+  display: flex;
+  align-items: center;
+}
+
+/*Bloque de estilo para los iconos que se presentarán en la parte izquierda del footer*/
+.footer-izquierdo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+/*Bloque de estilo para el logotipo que se presenta en el footer*/
+.logotipo-footer {
+  width: 50px;
+  height: 50px;
+  border-radius: 20px;
+}
+
+/*Bloque de estilo para los iconos de las redes sociales*/
+.social-icons {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*Bloque de estilo para la lista de los items, esto para dar formato a los iconos de las redes sociales*/
+.social-icons li {
+  margin-right: 10px;
+}
+
+/*Bloque de estilo para las etiquetas anclas que están dentro de las etiquetas li*/
+.social-icons li a {
+  color: #666;
+  transition: all 0.2s ease-in-out;
+}
+
+/*Bloque de estilo para la parte derecha del footer*/
+.footer-derecho {
+  text-align: right;
+}
