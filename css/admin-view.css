@@ -8,6 +8,7 @@
   font-family: "Cinzel", serif;
   text-decoration: none;
   scroll-padding-top: 2rem;
+  color: white;
   scroll-behavior: smooth;
 }
 
@@ -34,7 +35,8 @@
   --text-color: white;
 }
 
-/*Bloque de estilo para el cuerpo de la pagina*/
+
+/* Bloque de estilo para el cuerpo de la pagina */
 body {
   background: var(--fondoAzuladoOscuro);
   color: var(--text-color);
@@ -125,165 +127,59 @@ header {
   background: #0056b3;
 }
 
-
-/* Movie Card Information Section */
-.card-movie-info {
-  background: var(--movie-card-color);  /* Fondo del contenedor de la tarjeta de la película */
-  margin: 75px;
-  border-radius: 45px;
-}
-
-.movie-card {
-  display: flex;
-  align-items: flex-start;
-}
-
-.card-img {
-  border-radius: 0 40px;  /* Borde redondeado en la esquina superior derecha de la imagen de la tarjeta */
-  max-width: 30%;
-  height: auto;
-}
-
-.movie-info {
+.contenedor {
+  margin-top: 130px;
+  margin-left: 185px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 8% 0 0 5%;  /* Margen superior, no inferior, no izquierdo, margen derecho del 5% */
 }
 
-.info-details {
-  display: flex;
-  margin-top: 10px;
-  /* margin-bottom: 20px; */
+.boton-crearPelicula {
+  width: 200px;
+  margin-bottom: 15px;
+  padding: 5px 12px;
+  background-color: var(--navbar-color);
+  color: var(--text-color);
 }
 
-.info-item {
-  text-align: center;
-  margin-left: 20px;
-  margin-top: 30px;
-}
-
-.overview {
-  margin: 8% 10% 0 10%;  /* Margen superior del 8%, sin margen inferior, margen izquierdo y derecho del 10% */
-}
-
-/* AREA DE INFORMACIÓN DE PELÍCULAS, titulos y metadata */
-.movie-title {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  margin-left: 30px;
-}
-
-.info-label {
-  font-size: 1rem;
-  margin-bottom: 0.25rem;
-}
-
-.info-value {
-  font-size: 0.8rem;
-  font-weight: bold;
-}
-
-.overview-title {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.overview-description {
-  font-size: 0.8rem;
-  line-height: 1.5;
-}
-
-/* CONTENEDOR PARA IFRAME */
-.video-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  background-color: rgba(0, 0, 0, 0.8);  /* Capa oscura de superposición */
-  backdrop-filter: blur(5px);  /* Aplicar desenfoque de fondo */
-  display: none;  /* Ocultar el contenedor del video por defecto */
-  justify-content: center;
-  align-items: center;
-}
-
-/*Tamaño de contenedor de video*/
-#video-iframe {
-  width: 80%;
-  height: 60vh;
-}
-
-/* -----SECCIÓN DE COMENTARIOS*/
-/*Bloque de estilos para la sección de comentarios*/
-.comment-section {
-  margin-top: 20px;
-  margin: 75px;
-  position: relative;
-}
-
-/*Bloque de estilo para la etiqueta h2 en la sección de comentarios*/
-.comment-section h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-/*Bloque de estilos para el formulario de la seccion de comentarios*/
-.comment-section form {
-  width: 100%;
-  display: flex;
-  /* Añade flexbox al formulario */
-  flex-direction: column;
-  /* Apila los elementos en columna */
-}
-
-/*Bloque de estilos donde va almacenar el textarea para que el usuario escriba su opinion*/
-.form-group {
-  margin-bottom: 20px;
-}
-
-/*Bloque de estilos para la etiqueta label que esta dentro de la clase form-group*/
-.form-group label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-/*Bloque de estilo para la caja de texto donde el usuario escribirá su opinion*/
-.form-group textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  background-color: #1E2747;
-  color: white;
-  height: 120px;
-}
-
-/*Bloque de estilo para el botón de envio de los comnetarios de los usuarios*/
-.btn_comments {
-  display: block;
-  background: var(--fondoAzuladoClaro);
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  /* Posiciona el botón en la parte derecha */
-  margin-top: 155px;
-}
-
-/*Bloque de estilo para garantizar que el botón haga efecto de sombredado al momento de pasar el mouse*/
-.btn_comments:hover {
+.boton-crearPelicula:hover {
   background: #0056b3;
+  cursor: pointer;
 }
 
-/*Bloque de estilo para el contenedor de las peliculas a mostrar*/
+.contenedor-busqueda {
+  display: flex;
+  align-items: center;
+}
+
+.contenedor-busqueda input {
+  border: 2px solid #ced6e0;
+  font-size: 18px;
+  height: 50px;
+  width: 700px;
+  padding: 5px 12px;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+
+.boton-buscar {
+  margin-right: 50px;
+  background-color: var(--navbar-color);
+  color: var(--text-color);
+  font-weight: 400;
+  border-radius: 0.5rem;
+  width: 150px;
+  text-align: center;
+  padding: 5px 12px;
+}
+
+/* Estilos al pasar el cursor sobre los botones */
+.boton-buscar:hover {
+  background: #0056b3;
+  cursor: pointer;
+}
+
 .titulo-contenedor-peliculas {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -292,24 +188,81 @@ header {
   text-align: center;
 }
 
-/*Bloque de estilo para que muestren las peliculas principales en columnas*/
+
 .contenedor-peliculas {
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  flex-wrap: wrap;
+  /* Permitir que las películas se envuelvan en varias líneas */
+  overflow-y: auto;
+  /* Habilitar el scroll vertical */
   -webkit-overflow-scrolling: touch;
-  margin-left: 15px;
-  scroll-snap-type: x mandatory;
-  /* Aplicamos el tipo de snap en x */
+  max-height: 900px;
+  /* Ajusta esta altura según tus necesidades */
+  scroll-snap-type: y mandatory;
+  /* Cambiar a scroll en el eje Y */
   scroll-behavior: smooth;
-  /* Hace que el scroll se vea más suave */
   -ms-overflow-style: none;
-  /* Oculta la barra de scroll en navegadores Edge y IE */
   scrollbar-width: none;
-  /* Oculta la barra de scroll en Firefox */
+  text-align: center;
+  margin-left: 150px;
+  position: relative;
 }
 
+/* Estilos de las películas */
+.pelicula {
+  width: 20%;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  height: 358px;
+}
 
+.botones {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.botones button {
+  margin: 5px;
+}
+
+.editar {
+  width: 40px;
+  height: 30px;
+  background-color: white;
+  border-color: white;
+}
+
+.editar i {
+  color: blue;
+  /* Establece el color inicial para el ícono de "Editar" */
+}
+
+.editar:hover i {
+  color: darkblue;
+  /* Cambia el color del ícono al pasar el cursor sobre el botón */
+}
+
+.eliminar {
+  width: 40px;
+  height: 30px;
+  background-color: white;
+  border-color: white;
+}
+
+.eliminar i {
+  color: red;
+  /* Establece el color inicial para el ícono de "Eliminar" */
+}
+
+.eliminar:hover i {
+  color: darkred;
+  /* Cambia el color del ícono al pasar el cursor sobre el botón */
+}
 
 /*Bloque de estilo para personalizar el fondo scroll bar*/
 .contenedor-peliculas::-webkit-scrollbar {
@@ -325,17 +278,7 @@ header {
   border: 2px solid #000033;
 }
 
-/*Bloque de estilo para las columas donde van aparecer las peliculas*/
-.pelicula {
-  flex: 0 0 auto;
-  margin-right: 20px;
-  width: 25px;
-  color: #fff;
-  flex-basis: 12%;
-  flex-grow: 0;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
+
 
 /*Bloque de estilo para las imagenes de las peliculas*/
 .pelicula img {
@@ -419,6 +362,9 @@ footer {
 
 
 
+
+
+
 /*-------Estilo duplicado------*/
 /*ESTE ESTILO SE DEJARA HASTA EL FINAL. SERA DESCARTADO LUEGO DE UTILIZAR VISTAS*/
 /*SOLO ESTARA HABILITADO EN UN PARTIALS COMUN PARA TODAS LAS VISTAS*/
@@ -476,11 +422,9 @@ footer {
 
 .title {
   font-weight: bold;
-  color: white;
 }
 
 .account-info {
-  color: white;
   display: flex;
   align-items: center;
 }

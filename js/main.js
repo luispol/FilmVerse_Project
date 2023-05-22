@@ -21,7 +21,8 @@ var swiper = new Swiper(".home", {
     }
   });
 
-  // LOGICA PARA BOTÓN WATCH TRAILER
+
+// LOGICA PARA BOTÓN WATCH TRAILER
 // Obtiene el elemento del botón "Watch Trailer" por su ID
 const watchTrailerBtn = document.getElementById('watch-trailer-btn');
 // Obtiene el contenedor del video por su ID
@@ -37,17 +38,30 @@ videoContainer.addEventListener('click', () => {
   videoContainer.style.display = 'none';
 });
 
-// DROPDOWN LOGIC
 
-const dropdownToggle = document.getElementById('dropdownMenuButton');
-const dropdownMenu = document.querySelector('.dropdown-menu');
-
-dropdownToggle.addEventListener('click', () => {
-  dropdownMenu.classList.toggle('show');
-});
-
-window.addEventListener('click', (event) => {
-  if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
-    dropdownMenu.classList.remove('show');
+// Logica para boton de mostrar informacion de usuario
+function toggleAccountInfo() {
+  const accountInfo = document.querySelector('.account-info');
+  const notificationContent = document.querySelector('.notification-content');
+  // Cerrar el contenido de notificaciones si está abierto
+  if (notificationContent.classList.contains('visible')) {
+    notificationContent.classList.remove('visible');
   }
-});
+  // Alternar la visibilidad del contenido de la cuenta
+  accountInfo.classList.toggle('visible'); 
+}
+
+
+// Logica para boton de mostrar informacion de notificaciones
+function toggleNotificationContent() {
+  const accountInfo = document.querySelector('.account-info');
+  const notificationContent = document.querySelector('.notification-content');
+
+  // Cerrar el contenido de la cuenta si está abierto
+  if (accountInfo.classList.contains('visible')) {
+    accountInfo.classList.remove('visible');
+  }
+
+  // Alternar la visibilidad del contenido de notificaciones
+  notificationContent.classList.toggle('visible'); 
+}
