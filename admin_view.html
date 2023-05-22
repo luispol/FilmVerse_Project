@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filmverse</title>
-    <link rel="stylesheet" href="./css/admin-view.css">
-    <link rel="icon" href="./imgs/icono4.png" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filmverse</title>
+  <link rel="stylesheet" href="./css/admin-view.css">
+  <link rel="icon" href="./imgs/icono4.png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,11 +21,14 @@
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <!--Link para usar el CDN de fontawesome-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-   
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
+
 <body>
-    <!-- Navbar -->
+  <!-- Navbar -->
   <header>
     <img src="./imgs/icono4.png" alt="" class="logo" />
     <div class="bx bx-menu" id="menu-icon"></div>
@@ -39,25 +43,63 @@
       </ul>
     </nav>
 
-    <!--Icono encontrado en https://boxicons.com/-->
-    <img
-      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAa1JREFUSEu1lD9PAkEQxd+QyN4cidR+BAustaCnoZZEewqtNYEaCm2x0BoTeyiopbHWQmu/ASawnEbG7GXBA+5g+Xfd5WbnN+/t3CPs+KEd90csQESy38PhBUSKIDoKhxB5BVEr7Xl3RNRzHWwOEGh9LiI3RJSNayIiPSK6UsxNF8gUwDQHcG8PtlNAY4+5a95/tM6PgCqAfChoNCp5mUxrGWQCMLYEWr/byctJEwZaG0jFKFHMh8vsmgDGBwG0FfPposkCrTtWSV0x1xbV/gMGgxcQ5VJAYWxL0kFrV8dcvPL9EzeA1n1TqJgzy3w13wPH+qhFKwNE5Mvz/QM3BStYNOz3i5RKPQHoKuaCG8BuB4CWYi65XLKIXHu+33AC2DX9IKJ9ADXFXI87GNm2z7TnHTuvqWkWkQ4BugLUOPKj/QJVsj8agKUranomRcWtVTInwlwsERlbKjafGor5McmmRWF3acMuZ8PuzYZdw9gS2KUIYwNoeszlOMjacT2TW4mQtQHhnWn9QMDZePI4JRsBXCAbA2IgU0m8FUAE8jwb81sDrLSmLmnqWrNzBX+52tgZCbUHFgAAAABJRU5ErkJggg==" />
-    <a href="./login.html" class="btn"> Sign In </a>
+    <!--Searchbar-->
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Buscar">
+      <button id="searchButton" class="btn">Buscar</button>
+    </div>
+
+    <!--ICONO PARA NOTIFICACIONES-->
+    <button class="custom-button" onclick="toggleNotificationContent()">
+      <div class="button-content">
+        <span class="icon">
+          <i class="fas fa-bell"></i>
+        </span>
+        <div class="notification-content">
+          <div class="account-details">
+            <div class="title">Notificaciones</div>
+          </div>
+        </div>
+      </div>
+    </button>
+
+    <!--INFORMACION DE CUENTA DE USUARIOS-->
+    <button class="custom-button" onclick="toggleAccountInfo()">
+      <div class="button-content">
+        <span class="icon">
+          <i class="fas fa-user"></i>
+        </span>
+        <div class="account-info">
+          <div class="header">
+            <div class="title">Actualmente en</div>
+          </div>
+          <div class="avatar">
+            <img class="avatar-image" src="https://i.pinimg.com/75x75_RS/33/78/92/33789287dc81015f715d0b30d630ec98.jpg"
+              alt="Avatar">
+          </div>
+          <div class="account-details">
+            <div class="name">Pablo</div>
+            <div class="category">Admin</div>
+            <div class="email">pablo@catolica.edu.sv</div>
+          </div>
+        </div>
+      </div>
+    </button>
   </header>
-  
+
   <div class="contenedor">
     <!--El botón que nos permitirá añdir una nueva pelicula-->
     <a class="boton-crearPelicula"><i class="fa-solid fa-plus"></i> Add a new movie</a>
     <div class="contenedor-busqueda">
-        <input type="text" name="buscar" id="buscar">
-        <a class="boton-buscar">Search...</a>
+      <input type="text" name="buscar" id="buscar">
+      <a class="boton-buscar">Search...</a>
     </div>
   </div>
 
   <section class="titulo-contenedor-peliculas">
     <h3>Actual movies in the system</h3>
   </section>
-  
+
   <!--Contenedor de peliculas-->
   <section class="contenedor-peliculas">
     <div class="pelicula">
@@ -65,8 +107,8 @@
       <h3>Dune</h3>
       <p>15 sept 2021</p>
       <div class="botones">
-        <button class="editar" ><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar" ><i class="fa-solid fa-trash"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
 
@@ -75,8 +117,8 @@
       <h3>Avatar: El sentido del agua</h3>
       <p>15 dec 2022</p>
       <div class="botones">
-        <button class="editar" ><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar" ><i class="fa-solid fa-trash"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
 
@@ -85,8 +127,8 @@
       <h3>Dune</h3>
       <p>15 sept 2021</p>
       <div class="botones">
-        <button class="editar" ><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar" ><i class="fa-solid fa-trash"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
 
@@ -95,8 +137,8 @@
       <h3>Avatar: El sentido del agua</h3>
       <p>15 dec 2022</p>
       <div class="botones">
-        <button class="editar" ><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar" ><i class="fa-solid fa-trash"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
 
@@ -105,8 +147,8 @@
       <h3>Dune</h3>
       <p>15 sept 2021</p>
       <div class="botones">
-        <button class="editar" ><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar" ><i class="fa-solid fa-trash"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
 
@@ -115,8 +157,8 @@
       <h3>Avatar: El sentido del agua</h3>
       <p>15 dec 2022</p>
       <div class="botones">
-        <button class="editar" ><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar" ><i class="fa-solid fa-trash"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
 
@@ -125,8 +167,8 @@
       <h3>Dune</h3>
       <p>15 sept 2021</p>
       <div class="botones">
-        <button class="editar" ><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar" ><i class="fa-solid fa-trash"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
 
@@ -135,8 +177,8 @@
       <h3>Avatar: El sentido del agua</h3>
       <p>15 dec 2022</p>
       <div class="botones">
-        <button class="editar" ><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar" ><i class="fa-solid fa-trash"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
 
@@ -145,8 +187,8 @@
       <h3>Avatar: El sentido del agua</h3>
       <p>15 dec 2022</p>
       <div class="botones">
-        <button class="editar" ><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar" ><i class="fa-solid fa-trash"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
 
@@ -155,8 +197,8 @@
       <h3>Avatar: El sentido del agua</h3>
       <p>15 dec 2022</p>
       <div class="botones">
-        <button class="editar" ><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar" ><i class="fa-solid fa-trash"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
 
@@ -165,8 +207,8 @@
       <h3>Avatar: El sentido del agua</h3>
       <p>15 dec 2022</p>
       <div class="botones">
-        <button class="editar" ><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar" ><i class="fa-solid fa-trash"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
 
@@ -175,8 +217,8 @@
       <h3>Avatar: El sentido del agua</h3>
       <p>15 dec 2022</p>
       <div class="botones">
-        <button class="editar" ><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar" ><i class="fa-solid fa-trash"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
 
@@ -185,8 +227,8 @@
       <h3>Avatar: El sentido del agua</h3>
       <p>15 dec 2022</p>
       <div class="botones">
-        <button class="editar" ><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar" ><i class="fa-solid fa-trash"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
 
@@ -195,8 +237,8 @@
       <h3>Avatar: El sentido del agua</h3>
       <p>15 dec 2022</p>
       <div class="botones">
-        <button class="editar" ><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar" ><i class="fa-solid fa-trash"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
 
@@ -205,8 +247,8 @@
       <h3>Avatar: El sentido del agua</h3>
       <p>15 dec 2022</p>
       <div class="botones">
-        <button class="editar" ><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar" ><i class="fa-solid fa-trash"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
 
@@ -215,8 +257,8 @@
       <h3>Avatar: El sentido del agua</h3>
       <p>15 dec 2022</p>
       <div class="botones">
-        <button class="editar" ><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar" ><i class="fa-solid fa-trash"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
 
@@ -225,8 +267,8 @@
       <h3>Avatar: El sentido del agua</h3>
       <p>15 dec 2022</p>
       <div class="botones">
-        <button class="editar" ><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar" ><i class="fa-solid fa-trash"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
 
@@ -235,8 +277,8 @@
       <h3>Avatar: El sentido del agua</h3>
       <p>15 dec 2022</p>
       <div class="botones">
-        <button class="editar" ><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar" ><i class="fa-solid fa-trash"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
 
@@ -245,8 +287,8 @@
       <h3>Avatar: El sentido del agua</h3>
       <p>15 dec 2022</p>
       <div class="botones">
-        <button class="editar" ><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar" ><i class="fa-solid fa-trash"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
 
@@ -255,8 +297,8 @@
       <h3>Avatar: El sentido del agua</h3>
       <p>15 dec 2022</p>
       <div class="botones">
-        <button class="editar" ><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar" ><i class="fa-solid fa-trash"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
   </section>
@@ -287,10 +329,11 @@
     </div>
   </footer>
 
-    <!-- Swiper JS -->
+  <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
   <!-- Link to custom JS -->
   <script src="./js/main.js"></script>
 </body>
+
 </html>

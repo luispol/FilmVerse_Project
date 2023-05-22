@@ -186,3 +186,178 @@ footer {
   }
 
 
+
+
+
+
+
+
+/*-------Estilo duplicado------*/
+/*ESTE ESTILO SE DEJARA HASTA EL FINAL. SERA DESCARTADO LUEGO DE UTILIZAR VISTAS*/
+/*SOLO ESTARA HABILITADO EN UN PARTIALS COMUN PARA TODAS LAS VISTAS*/
+/*STYLE PARA BOTON INFORMACION DE CUENTA DE USUARIO*/
+
+/*SEARCHBAR STYLE*/
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-bar .btn {
+  margin-left: 8px;
+  padding: 8px 12px;
+  background-color: var(--fondoAzuladoOscuro);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-bar .btn:hover {
+  background-color: #0056b3;
+}
+
+.custom-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f0f0f000;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.icon {
+  color: white;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  margin-right: 10px;
+}
+
+.title {
+  font-weight: bold;
+  color: white;
+}
+
+.account-info {
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  /* margin-right: 10px; */
+  overflow: hidden;
+  border-radius: 50%;
+  margin-left: 36%;
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.account-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.category,
+.email {
+  margin-top: 2px;
+}
+
+.selected-indicator {
+  display: flex;
+  align-items: center;
+}
+
+.account-info {
+  display: none;
+}
+
+.account-info.visible {
+  display: block;
+}
+
+/* Despliegue hacia abajo */
+.account-info {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--navbar-color);
+  padding: 10px;
+  animation: slideDown 0.3s ease forwards;
+  border-radius: 0 0 20px 20px;
+}
+
+/*ESTILO PARA BOTON DE NOTIFICACIONES*/
+.button-content {
+  display: flex;
+  align-items: center;
+}
+
+.notification-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.notification-message {}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+}
+
+.notification-content {
+  display: none;
+}
+
+.notification-content.visible {
+  display: block;
+  margin-right: 9.2%;
+}
+
+.notification-content {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--navbar-color);
+  padding: 10px;
+  animation: slideDown 0.3s ease forwards;
+  border-radius: 0 0 20px 20px;
+}
+
+/*SLIDEDOWN PARA BOTONES NOTIFICACIONES Y USUARIO*/
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
