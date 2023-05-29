@@ -12,13 +12,29 @@ const movieSchema = new mongoose.Schema({
         type: [String],
         required: true
     },
+    directors:{
+        type: [String],
+        required: true
+    },
     fullplot: {
         type: String,
         trim: true,
         required: true
     },
+    year: {
+        type: String,
+        required: true
+      },      
     released: {
         type: Date,
+        required: true
+    },
+    countries: {
+        type: String,
+        required: true
+    },
+    poster: {
+        type: String,
         required: true
     },
     tomatoes: {
