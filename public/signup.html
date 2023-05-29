@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página de Inicio</title>
+  <link rel="icon" href="./imgs/icono4.png" />
+  <link rel="stylesheet" href="./css/login_signup.css" class="css">
+
+  <!-- FONTS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <!--El section es el elemento padre del formulario el cual esta vinculado haci la clase "form-login"-->
+  <section class="container">
+    <div class="login-container">
+      <div class="logo">
+        <!--Imagen del logo-->
+        <img src="./imgs/icono4.png" alt="Logo" />
+      </div>
+      <!--Cambiaria la logica para que la accion ocurra con la route create_user-->
+      <form action="./principal.html" method="post">
+        <div class="form-group">
+          <!--Textbox para el usuario, utilizando label-->
+          <label for="username">Nuevo usuario</label>
+          <!--Cajas de texto para el usuario-->
+          <input type="text" id="username" placeholder="Ingrese su nuevo usuario" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <!--Cajas de texto para la contraseña-->
+          <input type="password" id="password" placeholder="Ingrese su contraseña" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Confirme su Contraseña</label>
+          <!--Cajas de texto para la contraseña-->
+          <input type="password" id="password" placeholder="Ingrese nuevamente su contraseña" />
+        </div>
+        <!-- Enlace para recuperación de contraseña-->
+        <div class="forgot-password">
+          <a href="#">¿Ya tiene cuenta? - Ingrese aqui</a>
+        </div>
+        <!--Botón para el envio de información, en este caso simulando un inicio de sesión de un usuario-->
+        <button class="login-button" type="submit">Crear usuario</button>
+      </form>
+    </div>
+
+    <!--Contenedor para el slider-->
+    <div class="slider-container">
+      <div class="slider">
+        <div class="slide">
+          <img src="./imgs/fondo1.jpeg" alt="Slide 1" />
+        </div>
+        <div class="slide">
+          <img src="./imgs/movie2.jpg" alt="Slide 2" />
+        </div>
+        <div class="slide">
+          <img src="./imgs/movie1.jpg" alt="Slide 3" />
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
