@@ -39,6 +39,7 @@ fetch("http://192.168.100.14:3001/api/usuarios/login", requestOptions)
             if(!data.token){
                 alert(data.msg)
             } else {
+                console.log(data)
                 localStorage.setItem("token", data.token)
                 localStorage.setItem("email", data.email)
                 localStorage.setItem("password", data.password)

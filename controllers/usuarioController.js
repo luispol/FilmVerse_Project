@@ -34,13 +34,14 @@ const registrar = async (request,response)=>{
 //Metodo para autenticar a los usuarios
 const autenticar = async(request,response, next)=>{
     //Comprobar si el usuario existe
-    const {email,password}=request.body
+    const {email, password}=request.body
     const usuario = await Usuario.findOne({email})
     //response.json(usuario)
     if(!usuario){
         const error = new Error("Usuario no existe")
         return response.status(403).json({msg:error.message})
     }
+    
     //Comprobar el password
     if (await usuario.comprobarPassword(password)){
         request.usuario ={

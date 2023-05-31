@@ -2,11 +2,12 @@
 import express from 'express';
 import conectarDB from './config/db.js';
 import dotenv from 'dotenv';
-import usuariosRoutes from './routes/usuarioRoutes.js'
 import cors from "cors";
 
 // ROUTES
 import movieRoutes from "./routes/moviesRoutes.js";
+import usuariosRoutes from './routes/usuarioRoutes.js';
+import commentRoutes from './routes/commentRoutes.js';
 
 // Configuration
 const app = express(); // Create an instance of Express application
@@ -47,4 +48,7 @@ app.use('/api/movies', movieRoutes);
 
 // USERS
 app.use('/api/usuarios', usuariosRoutes)
+
+// COMMENTS
+app.use('/api/comments', commentRoutes)
 

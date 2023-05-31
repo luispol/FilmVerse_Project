@@ -15,11 +15,11 @@ const router = express.Router();
 
 router.route('/')
     .get(getAllMovies)
-    .post(setMovie, authAdmin);
+    .post(setMovie);
 
 router.route('/card')
     .get(getMoviesCard)
-    .put(editMovie, authAdmin)
-    .delete(deleteMovie, authAdmin);
+    .put(editMovie)
+    .delete(deleteMovie);
 
 export default router;
