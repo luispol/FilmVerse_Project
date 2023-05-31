@@ -13,17 +13,17 @@ function login(event) {
   console.log("Entra al login event")
   event.preventDefault();
 
-  var myHeaders = new Headers();
+  const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
   console.log(myHeaders)
 
-  var raw = JSON.stringify({
+  const raw = JSON.stringify({
     "email": email.value,
     "password": password.value
   });
 
-  var requestOptions = {
+  const requestOptions = {
     method: 'POST',
     headers: myHeaders,
     body: raw,
@@ -39,11 +39,11 @@ fetch("http://192.168.100.14:3001/api/usuarios/login", requestOptions)
             if(!data.token){
                 alert(data.msg)
             } else {
-                console.log(data)
                 localStorage.setItem("token", data.token)
+                console.log(data.token)
                 localStorage.setItem("email", data.email)
                 localStorage.setItem("password", data.password)
-                location.href = 'user_view.html'
+                location.href = 'movie_info.html'
             }
         })
         .catch(error => console.log('error', error));
