@@ -26,31 +26,37 @@
         <img src="./imgs/icono4.png" alt="Logo" />
       </div>
       <!--Cambiaria la logica para que la accion ocurra con la route create_user-->
-      <form action="./principal.html" method="post">
+      <form id="signupForm">
         <div class="form-group">
           <!--Textbox para el usuario, utilizando label-->
-          <label for="username">Nuevo usuario</label>
+          <label for="username">New user</label>
           <!--Cajas de texto para el usuario-->
-          <input type="text" id="username" placeholder="Ingrese su nuevo usuario" />
+          <input type="text" id="username" placeholder="Write your user name here..." />
         </div>
 
         <div class="form-group">
-          <label for="password">Contraseña</label>
+          <label for="email">Email</label>
           <!--Cajas de texto para la contraseña-->
-          <input type="password" id="password" placeholder="Ingrese su contraseña" />
+          <input type="email" id="email" placeholder="Write your email here..." />
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <!--Cajas de texto para la contraseña-->
+          <input type="password" id="password" placeholder="Write your password here..." />
+        </div>
+        <div class="form-group">
+          <label for="password">confirm your password</label>
+          <!--Cajas de texto para la contraseña-->
+          <input type="password" id="password2" placeholder="Enter your password again..." />
         </div>
 
-        <div class="form-group">
-          <label for="password">Confirme su Contraseña</label>
-          <!--Cajas de texto para la contraseña-->
-          <input type="password" id="password" placeholder="Ingrese nuevamente su contraseña" />
-        </div>
         <!-- Enlace para recuperación de contraseña-->
         <div class="forgot-password">
-          <a href="#">¿Ya tiene cuenta? - Ingrese aqui</a>
+          <a href="#">Already have an account? - Enter here</a>
         </div>
         <!--Botón para el envio de información, en este caso simulando un inicio de sesión de un usuario-->
-        <button class="login-button" type="submit">Crear usuario</button>
+        <button class="login-button" type="submit">Create user</button>
       </form>
     </div>
 
@@ -69,6 +75,9 @@
       </div>
     </div>
   </section>
+
+  <script src="./js/signup.js"></script>
+
 </body>
 
 </html>

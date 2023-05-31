@@ -8,17 +8,18 @@ import {
     deleteMovie
 } from "../controllers/movieController.js"
 
-import authenticationAdmin from "../middleware/authenticationAdmin.js"
+// tambien verificara que es un administrador al intentar ingresar
+import authAdmin from "../middleware/authAdmin.js"
 
 const router = express.Router();
 
 router.route('/')
     .get(getAllMovies)
-    .post(setMovie, authenticationAdmin);
+    .post(setMovie, authAdmin);
 
 router.route('/card')
     .get(getMoviesCard)
-    .put(editMovie, authenticationAdmin)
-    .delete(deleteMovie, authenticationAdmin);
+    .put(editMovie, authAdmin)
+    .delete(deleteMovie, authAdmin);
 
 export default router;
