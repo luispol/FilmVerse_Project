@@ -41,12 +41,12 @@ let token
       method: 'GET',
       redirect: 'follow'
     };
-    
+
     fetch("http://192.168.100.14:3001/api/movies", requestOptions)
       .then(response => response.json())
       .then(data => {
         let html = ``
-        data.forEach((item,index)=>{
+        data.forEach((item)=>{
           const releasedDate = item.released.substring(0, 10);
           html+= `
           <div class="pelicula">

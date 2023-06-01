@@ -41,6 +41,53 @@ function setComment(event) {
     .catch(error => console.log('error', error));
 }
 
+
+// CARGAR COMENTARIOS
+function cargarComentarios(element) {
+  const movieId = element.getAttribute('data-movie-id');
+
+  const requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
+
+  fetch(`http://192.168.100.14:3001/api/comments/${movieId}`, requestOptions)
+  .then(response => response.json())
+  .then(data => {
+    let html
+    data.forEach((item) => {
+      html += ` 
+              <div class="card">
+              <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-2">
+                      <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid" />
+                      <p class="text-secondary text-center">${item.createdAt}</p>
+                    </div>
+                    <div class="col-md-10">
+                      <p>
+                        <a class="float-left"
+                          href=""><strong>${item.nombre}</strong></a>
+      
+                      </p>
+                      <div class="clearfix"></div>
+                      <p>${item.comment}</p>
+                      <p>
+                        <a class="float-right btn btn-outline-primary ml-2"></i> edit</a>
+                        <a class="float-right btn text-white btn-danger"></i> Delete</a>
+                      </p>
+                    </div>
+                  </div>
+              </div>
+              </div>
+              `
+    });
+
+    document.querySelector("#contenido_comments").innerHTML = html
+  })
+  .catch(error => console.log('error', error));
+}
+
 // SHOW ALL COMMENTS
 document.addEventListener("DOMContentLoaded", cargarCard);
 
