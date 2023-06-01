@@ -1,116 +1,120 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
+<!--TODO EL HEAD PODRA ESTAR SEPARADO EN UNA CARPETA PARTIALS PARA REUTILIZAR PROPIEDADES-->
 <head>
+  <!--CONFIGURACIÓN DE PÁGINA-->
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="" href="" />
   <title>FilmVerse</title>
-  <link rel="icon" href="./imgs/icono4.png" />
-  <link rel="stylesheet" href="./css/movie-info.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" />
 
+  <!-- ICONO -->
+  <link rel="icon" href="./imgs/icono4.png" />
+
+  <!-- CUSTOM CSS -->
+  <link rel="stylesheet" href="./css/principal.css" />
+
+  <!-- MDB -->
+  <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.css" rel="stylesheet" />
+  -->
+
+  <!-- FONTS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100&family=Open+Sans:wght@400;600&display=swap"
     rel="stylesheet" />
-  <!-- ICONOS BOXICONS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
-  <link rel="icon" href="./imgs/icono4.png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 </head>
 
 <body>
-  <!-- Navbar -->
   <header>
     <img src="./imgs/icono4.png" alt="" class="logo" />
     <div class="bx bx-menu" id="menu-icon"></div>
-
-    <!-- MENU -->
+    <!--Main navbar-->
     <nav>
       <ul class="navbar">
-        <li><a href="./principal.html">Home</a></li>
-        <li><a href="#movies" class="home-active">Movies</a></li>
+        <li><a href="#home" class="home-active">Home</a></li>
+        <li><a href="#movies">Movies</a></li>
         <li><a href="#coming">Series</a></li>
         <li><a href="#Other">Genres</a></li>
       </ul>
     </nav>
-
     <!--Searchbar-->
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="Buscar">
       <button id="searchButton" class="btn">Buscar</button>
     </div>
-
-    <!--ICONO PARA NOTIFICACIONES-->
-    <button class="custom-button" onclick="toggleNotificationContent()">
-      <div class="button-content">
-        <span class="icon">
-          <i class="fas fa-bell"></i>
-        </span>
-        <div class="notification-content">
-          <div class="account-details">
-            <div class="title">Notificaciones</div>
-          </div>
-        </div>
-      </div>
-    </button>
-
-    <!--INFORMACION DE CUENTA DE USUARIOS-->
-    <button class="custom-button" onclick="toggleAccountInfo()">
-      <div class="button-content">
-        <span class="icon">
-          <i class="fas fa-user"></i>
-        </span>
-        <div class="account-info">
-          <div class="header">
-            <div class="title">Actualmente en</div>
-          </div>
-          <div class="avatar">
-            <img class="avatar-image" src="https://i.pinimg.com/75x75_RS/33/78/92/33789287dc81015f715d0b30d630ec98.jpg"
-              alt="Avatar">
-          </div>
-          <div class="account-details" id="account-details">
-          </div>
-        </div>
-      </div>
-    </button>
+    <!--Login bottom-->
+    <a href="./login.html" class="btn"> Sign In </a>
   </header>
+  
   <main>
-    <!-- Movie information card -->
-      <div id="contenedor_pelicula">
+    <!-- Home -->
+    <section class="home swiper" id="home">
+      <!-- Swiper -->
+      <div class="swiper-wrapper">
+        <!-- Box 1 -->
 
-      </div>
-
-    <!--Sección de caja de texto para que el usuario digite su propia opinión acerca de una película-->
-    <section class="comment-section">
-      <h2>Comments</h2>
-      <form id="comment-form">
-        <div class="form-group">
-          <label for="comment">What is your opinion about this movie?</label>
-          <textarea id="comment" name="comment" placeholder="Write a comment here..."></textarea>
+        <!-- contenedor principal de la diapositiva. Es utilizado 
+            por la biblioteca Swiper para representar una 
+            sola diapositiva del slider. -->
+        <div class="swiper-slide slide-container">
+          <!-- Imagen -->
+          <img src="./imgs/movie1.jpg" alt="" />
+          <div class="home-text">
+            <div class="card">
+              <span>Disney Series</span>
+              <h1>
+                Big <br />
+                Hero
+              </h1>
+              <a href="#" class="btn">Review</a>
+            </div>
+          </div>
         </div>
-        <button type="submit" class="btn_comments">Post</button>
-      </form>
 
-      <div class="container">
-        <div class="card">
-          <div id="contenido_comments">
-
+        <!-- Box 2-->
+        <div class="swiper-slide slide-container">
+          <!-- Imagen -->
+          <img src="./imgs/movie2.jpg" alt="" />
+          <!-- Contenido de la tarjeta -->
+          <div class="home-text">
+            <!-- Tarjeta -->
+            <div class="card">
+              <span>Laika Studios</span>
+              <h1>
+                Kubo <br />
+                Two Strings
+              </h1>
+              <a href="#" class="btn">Review</a>
+            </div>
+          </div>
+        </div>
+        <!-- Box 3-->
+        <div class="swiper-slide slide-container">
+          <img src="./imgs/Joker.jpg" alt="" />
+          <div class="home-text">
+            <div class="card">
+              <span>DC Comics</span>
+              <h1>
+                Joker <br />
+                Origin
+              </h1>
+              <a href="./movie_Info.html" class="btn">Review</a>
+            </div>
           </div>
         </div>
       </div>
+      <div class="swiper-pagination"></div>
     </section>
 
-    <!--Sección de título para el contenedor de las peliculas-->
     <section class="titulo-contenedor-peliculas">
-      <h3>Comment more movies</h3>
+      <h3>Trends</h3>
     </section>
 
     <!--Contenedor de peliculas-->
@@ -236,29 +240,58 @@
       </div>
     </section>
 
-    <!--Sección del footer-->
+    <!--Seccion para informacion de registro-->
+    <section class="contenedor-registro">
+      <div class="columnas-registro_info">
+        <div class="columas-registro_info-contenido">
+          <div class="columna">
+            <div class="columna-titulo">
+              <p>Join today</p>
+            </div>
+            <div class="columna-contenido">
+              <div class="descripcion">
+                <p>Welcome to filmverse! <br>
+                  Like you know, there are a lot of movies but is important to know what are <br>
+                  the opinion of the people. So, in this page you will can write your own opinion <br>
+                  and see what are the opinion of other persons about the different movies that <br>
+                  are in theaters or on digital platforms. So don't stay without commeting and <br>
+                  feel free to comment at your discretion what you think about a specific movie or serie.
+                </p>
+                <p class="boton">
+                  <a href="./signup.html" class="boton-registro">Sign Up</a>
+                </p>
+              </div>
+              <div class="caracteristicas">
+                <ul class="lista-caracteristicas">
+                  <li>Comment your opinions on movies anywhere</li>
+                  <li>Look at other people's comments about your favorite movie</li>
+                  <li>Contribute and improve our database</li>
+                  <li>Enjoy FilmVerse without ads</li>
+                  <li>Look at the participating actors for the creation of each film</li>
+                  <li>Meet people with your same tastes in movie genres</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Seccion del footer-->
     <footer>
       <div class="footer-izquierdo">
-        <a href="#"><img src="./imgs/icono4.png" alt="Logo de la empresa" class="logotipo-footer" /></a>
+        <a href="#"><img src="./imgs/icono4.png" alt="Logo de la empresa" class="logotipo-footer"></a>
         <ul class="social-icons">
-          <li>
-            <a href="#"><img src="./imgs/iconoFacebook.png" alt="Facebook" /></a>
-          </li>
-          <li>
-            <a href="#"><img src="./imgs/iconoInstagram.png" alt="Instagram" /></a>
-          </li>
-          <li>
-            <a href="#"><img src="./imgs/iconoTwitter.png" alt="Twitter" /></a>
-          </li>
+          <li><a href="#"><img src="./imgs/iconoFacebook.png" alt="Facebook"></a></li>
+          <li><a href="#"><img src="./imgs/iconoInstagram.png" alt="Instagram"></a></li>
+          <li><a href="#"><img src="./imgs/iconoTwitter.png" alt="Twitter"></a></li>
         </ul>
       </div>
       <div class="footer-derecho">
-        <p>
-          By pass Carretera a Metapán y carretera antigua a San Salvador<br />
-          El Salvador, Santa ana<br />
-          Number: 123-456-7890<br />
-          Email: support@filmverse.com
-        </p>
+        <p> By pass Carretera a Metapán y carretera antigua a San Salvador<br>
+          El Salvador, Santa ana<br>
+          Number: 123-456-7890<br>
+          Email: support@filmverse.com</p>
       </div>
     </footer>
   </main>
@@ -267,8 +300,11 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
   <!-- Link to custom JS -->
-  <script src="./js/card.js"></script>
   <script src="./js/main.js"></script>
+
+  <!-- MDB -->
+  <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.js"></script>
+  -->
 </body>
 
 </html>

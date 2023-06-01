@@ -3,7 +3,7 @@ import movies from "../models/movie.js";
 
 
 const getComment = async (request, response) =>{
-    console.log("No hay")
+
 }
 
 const getComments = async (request, response) =>{
@@ -36,12 +36,16 @@ const getComments = async (request, response) =>{
 
 
 const setComment = async (request, response) =>{
-    const comment = new comments(request.body);
-    comment.movie_id = request.usuario._id;
+    const { id } = request.params;
+    console.log(id)
+    const movie = await movies.findById(id);
+
+    const comment = new Comments(request.body);
+    comment.movie_id = movie._id;
     comment.nombre = request.usuario.nombre;
+    comment.user_id = request.usuario._id;
 
     console.log("Request comment" + comment)
-
     try {
         const commentSave = await comment.save();
         response.json(commentSave);

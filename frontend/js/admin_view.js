@@ -51,7 +51,7 @@ let token
           html+= `
           <div class="pelicula">
           <img src=${item.poster} alt="Poster de pelicula">
-          <h3>${item.title}</h3>
+          <h3><a href="movie_info.html?id=${item._id}">${item.title}</a></h3>
           <p>${releasedDate}</p>
           <div class="botones">
           <button class="editar" onClick="editarPelicula('${item._id}')"><i class="fa-solid fa-pen-to-square"></i></button>
@@ -68,6 +68,7 @@ let token
 
 function cargarDatosUsuario(){
   token = localStorage.getItem("token")
+  console.log(token)
     if (!token){
         location.href="login.html"
     }
@@ -96,9 +97,6 @@ function cargarDatosUsuario(){
       })
       .catch(error => console.log('error', error));
 }
-
-
-
   function cerrar(){
     localStorage.removeItem("token")
     localStorage.removeItem("email")

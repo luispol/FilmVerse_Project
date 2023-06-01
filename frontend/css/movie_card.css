@@ -1,0 +1,78 @@
+/*SOLO ESTILO PARA CARGAR TARJETA*/ 
+/* Estilo para peliculas */
+/* Estilos de las películas */
+.titulo-contenedor-peliculas {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-style: bold;
+    text-align: center;
+  }
+  
+  
+  .contenedor-peliculas {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permitir que las películas se envuelvan en varias líneas */
+    overflow-y: auto;
+    /* Habilitar el scroll vertical */
+    -webkit-overflow-scrolling: touch;
+    max-height: 900px;
+    /* Ajusta esta altura según tus necesidades */
+    scroll-snap-type: y mandatory;
+    /* Cambiar a scroll en el eje Y */
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    text-align: center;
+    margin-left: 150px;
+    position: relative;
+  }
+  
+  /* Estilos de las películas */
+  .pelicula {
+    width: 20%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    height: 358px;
+  }
+  
+  /*Bloque de estilo para personalizar el fondo scroll bar*/
+  .contenedor-peliculas::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+    background-color: transparent;
+  }
+  
+  /*Bloque de estilo para personalizar el scroll bar*/
+  .contenedor-peliculas::-webkit-scrollbar-thumb {
+    background-color: #000033;
+    border-radius: 10px;
+    border: 2px solid #000033;
+  }
+  
+  
+  
+  /*Bloque de estilo para las imagenes de las peliculas*/
+  .pelicula img {
+    width: 150px;
+    min-height: calc(150px * 1.5);
+    height: calc(150px * 1.5);
+    border-radius: 8px;
+  }
+  
+  /*Bloque de estilo para el titulo de cada pelicula*/
+  .pelicula h3 {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  
+  }
+  
+  /*Bloque de estilo para las fecha de estreno de cada pelicula*/
+  .pelicula p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  

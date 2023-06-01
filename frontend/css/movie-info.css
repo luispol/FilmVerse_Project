@@ -126,6 +126,9 @@ header {
 }
 
 
+
+
+
 /* Movie Card Information Section */
 .card-movie-info {
   background: var(--movie-card-color);  /* Fondo del contenedor de la tarjeta de la película */
@@ -135,7 +138,15 @@ header {
 
 .movie-card {
   display: flex;
-  align-items: flex-start;
+  padding: 20px;
+}
+
+.btnIframe {
+  padding: 0.7rem 1.4rem;
+  background-color: var(--navbar-color);
+  color: var(--text-color);
+  font-weight: 400;
+  border-radius: 0.5rem;
 }
 
 .card-img {
@@ -155,6 +166,7 @@ header {
   display: flex;
   margin-top: 10px;
   /* margin-bottom: 20px; */
+  margin-top: -30px;
 }
 
 .info-item {
@@ -172,6 +184,7 @@ header {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   margin-left: 30px;
+  margin-top: -20px;
 }
 
 .info-label {
@@ -193,6 +206,7 @@ header {
   font-size: 0.8rem;
   line-height: 1.5;
 }
+
 
 /* CONTENEDOR PARA IFRAME */
 .video-container {
@@ -641,7 +655,7 @@ footer {
 }
 
 .text-secondary {
-  color: #6c757d;
+  color: #b0d2f1;
 }
 
 .text-center {
@@ -692,4 +706,8 @@ footer {
   display: block;
   clear: both;
   content: "";
+}
+
+strong {
+  color: white;
 }

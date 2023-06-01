@@ -39,6 +39,7 @@ function login(event) {
       if (!data.token) {
         alert(data.msg)
       } else {
+        console.log(data.token)
         localStorage.setItem("token", data.token)
         localStorage.setItem("email", data.email)
         localStorage.setItem("password", data.password)

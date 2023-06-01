@@ -180,6 +180,10 @@ header {
   cursor: pointer;
 }
 
+
+
+/*CONTENEDOR DE PELICULAS*/
+
 .titulo-contenedor-peliculas {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -301,6 +305,12 @@ header {
   font-size: 14px;
   line-height: 1.5;
 }
+
+
+
+
+
+
 
 /*Bloques de estilos para el footer*/
 footer {
