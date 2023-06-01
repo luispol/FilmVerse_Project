@@ -71,17 +71,12 @@
         </span>
         <div class="account-info">
           <div class="header">
-            <div class="title">Actualmente en</div>
-          </div>
-          <div class="avatar">
-            <img class="avatar-image" src="https://i.pinimg.com/75x75_RS/33/78/92/33789287dc81015f715d0b30d630ec98.jpg"
-              alt="Avatar">
-          </div>
-          <div class="account-details">
-            <div class="name">Pablo</div>
-            <div class="category">Admin</div>
-            <div class="email">pablo@catolica.edu.sv</div>
-          </div>
+            <div class="title">Actualmente en:</div>
+            </div>
+
+            <div class="account-details" id="usuarioInfo">
+
+            </div>
         </div>
       </div>
     </button>
@@ -89,7 +84,7 @@
 
   <div class="contenedor">
     <!--El botón que nos permitirá añdir una nueva pelicula-->
-    <a class="boton-crearPelicula"><i class="fa-solid fa-plus"></i> Add a new movie</a>
+    <a class="boton-crearPelicula" onclick="location.href='agregar-peliculas.html'"><i class="fa-solid fa-plus"></i> Add a new movie</a>
     <div class="contenedor-busqueda">
       <input type="text" name="buscar" id="buscar">
       <a class="boton-buscar">Search...</a>
@@ -101,206 +96,8 @@
   </section>
 
   <!--Contenedor de peliculas-->
-  <section class="contenedor-peliculas">
-    <div class="pelicula">
-      <img src="./imgs/posteres-peliculas/posterDune.jpg" alt="Poster de Dune">
-      <h3>Dune</h3>
-      <p>15 sept 2021</p>
-      <div class="botones">
-        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
-      </div>
-    </div>
-
-    <div class="pelicula">
-      <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
-      <h3>Avatar: El sentido del agua</h3>
-      <p>15 dec 2022</p>
-      <div class="botones">
-        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
-      </div>
-    </div>
-
-    <div class="pelicula">
-      <img src="./imgs/posteres-peliculas/posterDune.jpg" alt="Poster de Dune">
-      <h3>Dune</h3>
-      <p>15 sept 2021</p>
-      <div class="botones">
-        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
-      </div>
-    </div>
-
-    <div class="pelicula">
-      <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
-      <h3>Avatar: El sentido del agua</h3>
-      <p>15 dec 2022</p>
-      <div class="botones">
-        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
-      </div>
-    </div>
-
-    <div class="pelicula">
-      <img src="./imgs/posteres-peliculas/posterDune.jpg" alt="Poster de Dune">
-      <h3>Dune</h3>
-      <p>15 sept 2021</p>
-      <div class="botones">
-        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
-      </div>
-    </div>
-
-    <div class="pelicula">
-      <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
-      <h3>Avatar: El sentido del agua</h3>
-      <p>15 dec 2022</p>
-      <div class="botones">
-        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
-      </div>
-    </div>
-
-    <div class="pelicula">
-      <img src="./imgs/posteres-peliculas/posterDune.jpg" alt="Poster de Dune">
-      <h3>Dune</h3>
-      <p>15 sept 2021</p>
-      <div class="botones">
-        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
-      </div>
-    </div>
-
-    <div class="pelicula">
-      <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
-      <h3>Avatar: El sentido del agua</h3>
-      <p>15 dec 2022</p>
-      <div class="botones">
-        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
-      </div>
-    </div>
-
-    <div class="pelicula">
-      <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
-      <h3>Avatar: El sentido del agua</h3>
-      <p>15 dec 2022</p>
-      <div class="botones">
-        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
-      </div>
-    </div>
-
-    <div class="pelicula">
-      <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
-      <h3>Avatar: El sentido del agua</h3>
-      <p>15 dec 2022</p>
-      <div class="botones">
-        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
-      </div>
-    </div>
-
-    <div class="pelicula">
-      <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
-      <h3>Avatar: El sentido del agua</h3>
-      <p>15 dec 2022</p>
-      <div class="botones">
-        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
-      </div>
-    </div>
-
-    <div class="pelicula">
-      <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
-      <h3>Avatar: El sentido del agua</h3>
-      <p>15 dec 2022</p>
-      <div class="botones">
-        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
-      </div>
-    </div>
-
-    <div class="pelicula">
-      <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
-      <h3>Avatar: El sentido del agua</h3>
-      <p>15 dec 2022</p>
-      <div class="botones">
-        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
-      </div>
-    </div>
-
-    <div class="pelicula">
-      <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
-      <h3>Avatar: El sentido del agua</h3>
-      <p>15 dec 2022</p>
-      <div class="botones">
-        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
-      </div>
-    </div>
-
-    <div class="pelicula">
-      <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
-      <h3>Avatar: El sentido del agua</h3>
-      <p>15 dec 2022</p>
-      <div class="botones">
-        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
-      </div>
-    </div>
-
-    <div class="pelicula">
-      <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
-      <h3>Avatar: El sentido del agua</h3>
-      <p>15 dec 2022</p>
-      <div class="botones">
-        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
-      </div>
-    </div>
-
-    <div class="pelicula">
-      <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
-      <h3>Avatar: El sentido del agua</h3>
-      <p>15 dec 2022</p>
-      <div class="botones">
-        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
-      </div>
-    </div>
-
-    <div class="pelicula">
-      <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
-      <h3>Avatar: El sentido del agua</h3>
-      <p>15 dec 2022</p>
-      <div class="botones">
-        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
-      </div>
-    </div>
-
-    <div class="pelicula">
-      <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
-      <h3>Avatar: El sentido del agua</h3>
-      <p>15 dec 2022</p>
-      <div class="botones">
-        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
-      </div>
-    </div>
-
-    <div class="pelicula">
-      <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
-      <h3>Avatar: El sentido del agua</h3>
-      <p>15 dec 2022</p>
-      <div class="botones">
-        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="eliminar"><i class="fa-solid fa-trash"></i></button>
-      </div>
-    </div>
+  <section class="contenedor-peliculas" id="contenedor-peliculas">
+    
   </section>
 
   <!--Sección del footer-->
@@ -329,11 +126,9 @@
     </div>
   </footer>
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
   <!-- Link to custom JS -->
-  <script src="./js/main.js"></script>
+  <script src="./js/admin_view.js"></script>
 </body>
 
 </html>

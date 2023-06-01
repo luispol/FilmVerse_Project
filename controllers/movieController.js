@@ -22,6 +22,7 @@ const getMoviesCard = async (request, response) => {
 
 const setMovie = async (request, response) => {
     const movies = new movie(request.body);
+    console.log(request.body);
     try {
         const movieSave = await movies.save();
         console.log(movieSave);

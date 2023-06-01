@@ -6,13 +6,17 @@ const getComment = async (request, response) =>{
 }
 
 const getComments = async (request, response) =>{
-    const comment = await comments.find();
+    const comment = await comments.find({movie_id:request.movie._id});
     response.json(comment); 
 }
 
 const setComment = async (request, response) =>{
     const comment = new comments(request.body);
     comment.movie_id = request.usuario._id;
+    comment.nombre = request.usuario.nombre;
+
+    console.log("Request comment" + comment)
+
     try {
         const commentSave = await comment.save();
         response.json(commentSave);

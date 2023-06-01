@@ -1,5 +1,7 @@
 // variables
 let token;
+// al cargar la pagina se cargara nombre del usuario y se podra utilizar en cualquier lugar.
+let nombre;
 
 // Eventos
 // SET COMMENTS
@@ -19,7 +21,8 @@ function setComment(event) {
   myHeaders.append("Authorization", `Bearer ${token}`);
 
   var raw = JSON.stringify({
-    "comment": comment.value
+    "comment": comment.value,
+    "nombreUsuario": nombre
   });
 
   var requestOptions = {
@@ -71,8 +74,7 @@ function cargarCard() {
                       <div class="col-md-10">
                         <p>
                           <a class="float-left"
-                            href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Maniruzzaman
-                              Akash</strong></a>
+                            href=""><strong>${item.nombre}</strong></a>
         
                         </p>
                         <div class="clearfix"></div>
@@ -114,6 +116,8 @@ function cargarUser() {
   .then(response => response.json())
   .then(data => {
     let html
+
+    // asignamos el nombre a la variable global
     if(data.tipo.toString() === "2"){
       tipo = "Usuario"
         html = ` 

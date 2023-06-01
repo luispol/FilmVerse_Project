@@ -14,11 +14,9 @@ const router = express.Router();
 
 router.route('/')
     .get(getComments)
-    .post(checkAuth, setComment);
 
 router.route('/:id')
-    .get(checkAuth, getComment)
-    .put(checkAuth, editComment)
-    .delete(checkAuth, deleteComment);
+    .post(checkAuth, setComment)
+
 
 export default router;

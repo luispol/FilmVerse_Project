@@ -5,6 +5,10 @@ const commentSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref:"movie"
     },
+    nombre: {
+        type: mongoose.Schema.Types.String,
+        ref:"Usuarios"
+    },
     comment: {
         type: String,
         required: true
