@@ -182,8 +182,9 @@ header {
 
 
 
-/*CONTENEDOR DE PELICULAS*/
 
+
+/*CONTENEDOR DE PELICULAS*/
 .titulo-contenedor-peliculas {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -310,8 +311,7 @@ header {
 
 
 
-
-
+/*BLOQUE PARA FOOTER*/
 /*Bloques de estilos para el footer*/
 footer {
   color: #fff;

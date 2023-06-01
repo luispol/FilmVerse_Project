@@ -1,3 +1,30 @@
+// Logica para boton de mostrar informacion de usuario
+function toggleAccountInfo() {
+  const accountInfo = document.querySelector('.account-info');
+  const notificationContent = document.querySelector('.notification-content');
+  // Cerrar el contenido de notificaciones si está abierto
+  if (notificationContent.classList.contains('visible')) {
+    notificationContent.classList.remove('visible');
+  }
+  // Alternar la visibilidad del contenido de la cuenta
+  accountInfo.classList.toggle('visible');
+}
+
+// Logica para boton de mostrar informacion de notificaciones
+function toggleNotificationContent() {
+  const accountInfo = document.querySelector('.account-info');
+  const notificationContent = document.querySelector('.notification-content');
+
+  // Cerrar el contenido de la cuenta si está abierto
+  if (accountInfo.classList.contains('visible')) {
+    accountInfo.classList.remove('visible');
+  }
+
+  // Alternar la visibilidad del contenido de notificaciones
+  notificationContent.classList.toggle('visible');
+}
+
+
 // variables
 let token;
 // al cargar la pagina se cargara nombre del usuario y se podra utilizar en cualquier lugar.
@@ -6,14 +33,17 @@ let nombre;
 
 // Eventos
 // GET USER
+
 document.addEventListener("DOMContentLoaded", cargarUser)
 
 function cargarUser() {
-  console.log("estamos cargando usuario")
-  console.log(token);
-
-  var myHeaders = new Headers();
+  token = localStorage.getItem("token")
+  if (!token) {
+    location.href = "login.html"
+  }
+  const myHeaders = new Headers();
   myHeaders.append("Authorization", `Bearer ${token}`);
+  console.log(token)
 
   var requestOptions = {
     method: 'GET',
@@ -24,6 +54,7 @@ function cargarUser() {
   fetch("http://192.168.100.14:3001/api/usuarios/perfil", requestOptions)
     .then(response => response.json())
     .then(data => {
+      console.log(data)
       let html
 
       // asignamos el nombre a la variable global
@@ -33,6 +64,7 @@ function cargarUser() {
           <div class="name">${data.nombre}</div>
           <div class="category">${tipo}</div>
           <div class="email">${data.email}</div>
+          <div class="logaut"><a onclick="cerrar()">Cerrar Sesion</a></div>
               `
       } else {
         tipo = "Admin"
@@ -40,12 +72,12 @@ function cargarUser() {
       <div class="name">${data.nombre}</div>
       <div class="category">${tipo}</div>
       <div class="email">${data.email}</div>
+      <div class="logaut"><a onclick="cerrar()">Cerrar Sesion</a></div>
           `
       }
       document.querySelector("#account-details").innerHTML = html
     })
     .catch(error => console.log('error', error));
-
 }
 
 

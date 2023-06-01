@@ -381,22 +381,16 @@ header {
   font-style: bold;
   text-align: center;
 }
-
-/*Bloque de estilo para que muestren las peliculas principales en columnas*/
 .contenedor-peliculas {
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: auto;
+  overflow-y: hidden; /* Oculta el scroll vertical */
   -webkit-overflow-scrolling: touch;
   margin-left: 15px;
   scroll-snap-type: x mandatory;
-  /* Aplicamos el tipo de snap en x */
   scroll-behavior: smooth;
-  /* Hace que el scroll se vea más suave */
   -ms-overflow-style: none;
-  /* Oculta la barra de scroll en navegadores Edge y IE */
   scrollbar-width: none;
-  /* Oculta la barra de scroll en Firefox */
 }
 
 /*Bloque de estilo para personalizar el fondo scroll bar*/
@@ -413,39 +407,43 @@ header {
   border: 2px solid #000033;
 }
 
-/*Bloque de estilo para las columas donde van aparecer las peliculas*/
-.pelicula {
-  flex: 0 0 auto;
-  margin-right: 20px;
-  width: 25px;
-  color: #fff;
-  flex-basis: 12%;
-  flex-grow: 0;
-  padding-top: 20px;
-  padding-bottom: 20px;
+#contenedor-peliculas {
+  display: flex;
 }
 
-/*Bloque de estilo para las imagenes de las peliculas*/
+.pelicula {
+  flex: 0 0 auto;
+  margin-right: 10px;
+  width: 200px;
+  color: #fff;
+  scroll-snap-align: start;
+  transition: transform 0.3s;
+  padding: 10px;
+}
+
+.pelicula:hover {
+  transform: scale(1.1);
+}
+
 .pelicula img {
-  width: 150px;
-  min-height: calc(150px * 1.5);
-  height: calc(150px * 1.5);
+  width: 90%;
+  height: 200px;
+  object-fit: cover;
   border-radius: 8px;
 }
 
-/*Bloque de estilo para el titulo de cada pelicula*/
 .pelicula h3 {
   font-size: 18px;
   margin-top: 10px;
   margin-bottom: 5px;
-
 }
 
-/*Bloque de estilo para las fecha de estreno de cada pelicula*/
 .pelicula p {
   font-size: 14px;
   line-height: 1.5;
+  margin-bottom: 0;
 }
+
 
 
 
