@@ -24,7 +24,7 @@ const registrar = async (request,response)=>{
 }
 
 //Metodo para autenticar a los usuarios
-const autenticar = async(request,response)=>{
+const autenticar = async(request,response, next)=>{
     //Comprobar si el usuario existe
     const {email,password}=request.body
     const usuario = await Usuario.findOne({email})
@@ -35,12 +35,15 @@ const autenticar = async(request,response)=>{
     }
     //Comprobar el password
     if (await usuario.comprobarPassword(password)){
-        return response.json({
+        request.usuario ={
             _id:usuario._id,
             nombre:usuario.nombre,
             email:usuario.email,
-            token:generarJWT(usuario._id,usuario.nombre)
-        })
+            token:generarJWT(usuario._id,usuario.nombre),
+            tipo:usuario.tipo
+        };
+
+        next();
     } else{
         const error = new Error("Password incorrecto")
         return response.status(403).json({msg:error.message})
