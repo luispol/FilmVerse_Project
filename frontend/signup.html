@@ -26,7 +26,7 @@
         <img src="./imgs/icono4.png" alt="Logo" />
       </div>
       <!--Cambiaria la logica para que la accion ocurra con la route create_user-->
-      <form action="./principal.html" method="post">
+      <form id="signupForm">
         <div class="form-group">
           <!--Textbox para el usuario, utilizando label-->
           <label for="username">New user</label>
@@ -35,9 +35,9 @@
         </div>
 
         <div class="form-group">
-          <label for="password">Email</label>
+          <label for="email">Email</label>
           <!--Cajas de texto para la contraseña-->
-          <input type="password" id="email" placeholder="Write your email here..." />
+          <input type="email" id="email" placeholder="Write your email here..." />
         </div>
         
         <div class="form-group">
@@ -45,15 +45,12 @@
           <!--Cajas de texto para la contraseña-->
           <input type="password" id="password" placeholder="Write your password here..." />
         </div>
-
         <div class="form-group">
           <label for="password">confirm your password</label>
           <!--Cajas de texto para la contraseña-->
           <input type="password" id="password2" placeholder="Enter your password again..." />
         </div>
 
-        <input type="hidden" id="hiddenInput" value="" />
-        
         <!-- Enlace para recuperación de contraseña-->
         <div class="forgot-password">
           <a href="#">Already have an account? - Enter here</a>
@@ -78,6 +75,9 @@
       </div>
     </div>
   </section>
+
+  <script src="./js/signup.js"></script>
+
 </body>
 
 </html>

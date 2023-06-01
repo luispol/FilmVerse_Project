@@ -1,12 +1,10 @@
 {
   "name": "filmverse_project",
   "version": "1.0.0",
-  "description": "This is a project aboyt how create a web page about movies reviews",
+  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

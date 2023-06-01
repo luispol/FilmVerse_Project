@@ -39,7 +39,7 @@ function guardar(event){
     redirect: 'follow'
     };
 
-    fetch("http://192.168.0.170:3001/api/movies", requestOptions)
+    fetch("http://10.238.91.26:3001/api/movies", requestOptions)
     .then(response => response.json())
     .then(data => {
         if(!data._id){

@@ -72,14 +72,7 @@
           <div class="header">
             <div class="title">Actualmente en</div>
           </div>
-          <div class="avatar">
-            <img class="avatar-image" src="https://i.pinimg.com/75x75_RS/33/78/92/33789287dc81015f715d0b30d630ec98.jpg"
-              alt="Avatar">
-          </div>
-          <div class="account-details">
-            <div class="name">William Perez</div>
-            <div class="category">Personal</div>
-            <div class="email">william.perez@catolica.edu.sv</div>
+          <div class="account-details" id="account-details">
           </div>
         </div>
       </div>
@@ -87,46 +80,8 @@
   </header>
   <main>
     <!-- Movie information card -->
-    <section class="card-movie-info">
-      <div class="movie-card">
-        <img src="./imgs/posteres-peliculas/PosterJoker.jpg" alt="" class="card-img" />
-        <div class="movie-info">
-          <h1 class="movie-title">Joker</h1>
-          <div class="info-details">
-            <div class="info-item">
-              <img src="./imgs/year.png" alt="" class="info-label">
-              <p class="info-value">2012</p>
-            </div>
-            <div class="info-item">
-              <img src="./imgs/rating.png" alt="" class="info-label">
-              <p class="info-value">4.5/5</p>
-            </div>
-            <div class="info-item">
-              <img src="./imgs/genre.png" alt="" class="info-label">
-              <p class="info-value">Thriller, Sci-Fi</p>
-            </div>
-          </div>
-
-          <!-- Contenedor para el Iframe -->
-          <div class="info-item">
-            <a href="#" class="btn" id="watch-trailer-btn">Watch Trailer</a>
-            <div class="video-container" id="video-container">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/t433PEQGErc"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-        <div class="overview">
-          <h4 class="overview-title">Overview</h4>
-          <p class="overview-description">A socially inept clown for hire - Arthur Fleck aspires to be a stand up
-            comedian among his small job working dressed as a clown holding a sign for advertising. He takes care of his
-            mother- Penny Fleck, and as he learns more about his mental illness, he learns more about his past. Dealing
-            with all the negativity and bullying from society he heads downwards on a spiral, in turn showing how his
-            alter ego "Joker", came to be.
-        </div>
-    </section>
+      <div id="contenedor_pelicula">
+      </div>
 
     <!--Sección de caja de texto para que el usuario digite su propia opinión acerca de una película-->
     <section class="comment-section">
@@ -138,13 +93,20 @@
         </div>
         <button type="submit" class="btn_comments">Post</button>
       </form>
+
+      <div class="container">
+        <div class="card">
+          <div id="contenido_comments">
+
+          </div>
+        </div>
+      </div>
     </section>
 
     <!--Sección de título para el contenedor de las peliculas-->
     <section class="titulo-contenedor-peliculas">
       <h3>Comment more movies</h3>
     </section>
-
 
     <!--Contenedor de peliculas-->
     <section class="contenedor-peliculas">
@@ -300,6 +262,7 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
   <!-- Link to custom JS -->
+  <script src="./js/card.js"></script>
   <script src="./js/main.js"></script>
 </body>
 

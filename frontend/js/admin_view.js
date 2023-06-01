@@ -41,20 +41,20 @@ let token
       method: 'GET',
       redirect: 'follow'
     };
-    
-    fetch("http://192.168.0.170:3001/api/movies", requestOptions)
+
+    fetch("http://10.238.91.26:3001/api/movies", requestOptions)
       .then(response => response.json())
       .then(data => {
         let html = ``
-        data.forEach((item,index)=>{
+        data.forEach((item)=>{
           const releasedDate = item.released.substring(0, 10);
           html+= `
           <div class="pelicula">
           <img src=${item.poster} alt="Poster de pelicula">
-          <h3>${item.title}</h3>
+          <h3><a href="movie_info.html?id=${item._id}">${item.title}</a></h3>
           <p>${releasedDate}</p>
           <div class="botones">
-          <button class="editar" onClick="editarPelicula('${item._id}')" ><i class="fa-solid fa-pen-to-square"></i></button>
+          <button class="editar" onClick="editarPelicula('${item._id}')"><i class="fa-solid fa-pen-to-square"></i></button>
           <button class="eliminar" onClick="eliminarPelicula('${item._id}')")><i class="fa-solid fa-trash"></i></button>
           </div>
           </div>
@@ -65,48 +65,29 @@ let token
       .catch(error => console.log('error', error));
   }
 
-//Funcion para elimnar pelicula
-function eliminarPelicula(id){
-  var requestOptions = {
-    method: 'DELETE',
-    redirect: 'follow'
-  };
+  function eliminarPelicula(id){
   
-  fetch(`http://192.168.0.170:3001/api/movies/card?id=${id}`, requestOptions)
-    .then(response => response.json())
-    .then(result => {console.log(result);
-      location.reload();
-    })
-    .catch(error => console.log('error', error));
-}
-
-//Funcion para editar pelicula
-function editarPelicula(id){
-  location.href="agregar-peliculas.html"
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-
-  var raw = JSON.stringify({
-    "title": "Avatar: The Way Of Water"
-  });
-
-  var requestOptions = {
-    method: 'PUT',
-    headers: myHeaders,
-    body: raw,
-    redirect: 'follow'
-  };
-
-  fetch("localhost:3001/api/movies/card?id=6476f5eed04367b90ee7f007", requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
-}
+    if (confirm('¿Estás seguro de que deseas eliminar esta película?')) {
+      var requestOptions = {
+        method: 'DELETE',
+        redirect: 'follow'
+      };
+    
+      fetch(`http://10.238.91.26:3001/api/movies/card?id=${id}`, requestOptions)
+        .then(response => response.json())
+        .then(result => {
+          console.log(result);
+          location.reload();
+        })
+        .catch(error => console.log('error', error));
+    }
+  }
 
 
 
 function cargarDatosUsuario(){
   token = localStorage.getItem("token")
+  console.log(token)
     if (!token){
         location.href="login.html"
     }
@@ -119,7 +100,7 @@ function cargarDatosUsuario(){
       redirect: 'follow'
     };
 
-    fetch("http://192.168.0.170:3001/api/usuarios/perfil", requestOptions)
+    fetch("http://10.238.91.26:3001/api/usuarios/perfil", requestOptions)
       .then(response => response.json())
       .then(data => {
         let html = ``
@@ -135,9 +116,6 @@ function cargarDatosUsuario(){
       })
       .catch(error => console.log('error', error));
 }
-
-
-
   function cerrar(){
     localStorage.removeItem("token")
     localStorage.removeItem("email")

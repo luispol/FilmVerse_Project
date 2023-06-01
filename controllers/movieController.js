@@ -1,6 +1,6 @@
 // Import movies model
+import {request} from 'express';
 import movie from "../models/movie.js";
-
 
 // CRUD ACTIONS
 
@@ -45,7 +45,7 @@ const setMovie = async (request, response) => {
 */
 
 const editMovie = async (request, response) => {
-  try {
+    try {
     // try in postman, Example: localhost:3001/api/movies/card?id=64741fc21a010ea6c8fb068d
       const updatedMovie = await movie.findOneAndUpdate(
         { _id: request.query.id },

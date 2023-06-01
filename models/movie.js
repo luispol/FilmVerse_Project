@@ -12,7 +12,7 @@ const movieSchema = new mongoose.Schema({
         type: [String],
         required: true
     },
-    directors:{
+    directors: {
         type: [String],
         required: true
     },
@@ -24,7 +24,7 @@ const movieSchema = new mongoose.Schema({
     year: {
         type: String,
         required: true
-      },      
+    },
     released: {
         type: Date,
         required: true
@@ -37,16 +37,11 @@ const movieSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    tomatoes: {
-        rating: {
-            type: Number,
-            require: false,
-            integer: true // Integer validation
-        }
-    },
-    trailer:{
-        type: String,
-        required:true
+    rating: {
+        type: Number,
+        require: false,
+        integer: true // Integer validation
+
     }
 }, {
     timestamps: true
