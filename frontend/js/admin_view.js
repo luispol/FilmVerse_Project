@@ -65,10 +65,42 @@ let token
       .catch(error => console.log('error', error));
   }
 
-
-function editarPelicula(){
-  location.href="agregar-peliculas.html"
+//Funcion para elimnar pelicula
+function eliminarPelicula(id){
+  var requestOptions = {
+    method: 'DELETE',
+    redirect: 'follow'
+  };
   
+  fetch(`http://192.168.0.170:3001/api/movies/card?id=${id}`, requestOptions)
+    .then(response => response.json())
+    .then(result => {console.log(result);
+      location.reload();
+    })
+    .catch(error => console.log('error', error));
+}
+
+//Funcion para editar pelicula
+function editarPelicula(id){
+  location.href="agregar-peliculas.html"
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var raw = JSON.stringify({
+    "title": "Avatar: The Way Of Water"
+  });
+
+  var requestOptions = {
+    method: 'PUT',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+
+  fetch("localhost:3001/api/movies/card?id=6476f5eed04367b90ee7f007", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
 }
 
 
