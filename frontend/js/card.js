@@ -2,29 +2,65 @@
 let token;
 
 // Eventos
+// SET COMMENTS
 
-document.addEventListener("DOMContentLoaded", cargarDatos);
+const formComment = document.querySelector("#comment-form");
+const comment = document.querySelector("#comment");
 
-function cargarDatos() {
-    token = localStorage.getItem("token");
-    console.log("Aqui estamos dentro")
-    console.log(token);
+document.addEventListener("submit", setComment);
 
-    if (!token) {
-        location.href = "login.html";
-    }
+function setComment(event) {
+  token = localStorage.getItem("token");
+  console.log("entra a evento");
+  event.preventDefault();
 
-    const requestOptions = {
-        method: 'GET',
-        redirect: 'follow'
-    };
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  myHeaders.append("Authorization", `Bearer ${token}`);
 
-    fetch("http://192.168.100.14:3001/api/comments/", requestOptions)
-        .then(response => response.json())
-        .then(data => {
-            let html
-            data.forEach((item) => {
-                html += ` 
+  var raw = JSON.stringify({
+    "comment": comment.value
+  });
+
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+
+  fetch("http://192.168.100.14:3001/api/comments/", requestOptions)
+    .then(response => response.json())
+    .then(result => {
+      console.log(result);
+      location.href = 'movie_info.html'
+    })
+    .catch(error => console.log('error', error));
+}
+
+// SHOW ALL COMMENTS
+document.addEventListener("DOMContentLoaded", cargarCard);
+
+function cargarCard() {
+  token = localStorage.getItem("token");
+  console.log("Aqui estamos dentro")
+  console.log(token);
+
+  if (!token) {
+    location.href = "login.html";
+  }
+
+  const requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
+
+  fetch("http://192.168.100.14:3001/api/comments/", requestOptions)
+    .then(response => response.json())
+    .then(data => {
+      let html
+      data.forEach((item) => {
+        html += ` 
                 <div class="card">
                 <div class="card-body">
                     <div class="row">
@@ -50,13 +86,53 @@ function cargarDatos() {
                 </div>
                 </div>
                 `
-            });
+      });
 
-            document.querySelector("#contenido_comments").innerHTML = html
-        })
-        .catch(error => console.log('error', error));
+      document.querySelector("#contenido_comments").innerHTML = html
+    })
+    .catch(error => console.log('error', error));
+}
 
 
+// GET USER
+document.addEventListener("DOMContentLoaded", cargarUser)
+
+function cargarUser() {
+  console.log("estamos cargando usuario")
+  console.log(token);
+
+  var myHeaders = new Headers();
+  myHeaders.append("Authorization",  `Bearer ${token}`);
+
+  var requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+    redirect: 'follow'
+  };
+
+  fetch("http://192.168.100.14:3001/api/usuarios/perfil", requestOptions)
+  .then(response => response.json())
+  .then(data => {
+    let html
+    if(data.tipo.toString() === "2"){
+      tipo = "Usuario"
+        html = ` 
+          <div class="name">${data.nombre}</div>
+          <div class="category">${tipo}</div>
+          <div class="email">${data.email}</div>
+              `
+    } else {
+      tipo = "Admin"
+        html = ` 
+      <div class="name">${data.nombre}</div>
+      <div class="category">${tipo}</div>
+      <div class="email">${data.email}</div>
+          `
+    }
+    document.querySelector("#account-details").innerHTML = html
+  })
+  .catch(error => console.log('error', error));
 
 }
+
 

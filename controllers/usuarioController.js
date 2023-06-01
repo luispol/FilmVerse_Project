@@ -1,7 +1,6 @@
 import Usuario from "../models/Usuarios.js"
 import generarJWT from "../helpers/generarJWT.js"
 
-
 //Metodo para registrar a los usuarios
 const registrar = async (request,response)=>{
     try {
