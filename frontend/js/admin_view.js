@@ -54,7 +54,7 @@ let token
           <h3>${item.title}</h3>
           <p>${releasedDate}</p>
           <div class="botones">
-          <button class="editar" onClick="editarPelicula('${item._id}')"><i class="fa-solid fa-pen-to-square"></i></button>
+          <button class="editar" onClick="editarPelicula('${item._id}')" ><i class="fa-solid fa-pen-to-square"></i></button>
           <button class="eliminar" onClick="eliminarPelicula('${item._id}')")><i class="fa-solid fa-trash"></i></button>
           </div>
           </div>
@@ -64,6 +64,13 @@ let token
       })
       .catch(error => console.log('error', error));
   }
+
+
+function editarPelicula(){
+  location.href="agregar-peliculas.html"
+  
+}
+
 
 
 function cargarDatosUsuario(){
