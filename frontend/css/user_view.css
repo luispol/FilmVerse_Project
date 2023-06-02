@@ -248,6 +248,7 @@ footer {
 .search-bar {
   display: flex;
   align-items: center;
+  color: black;
 }
 
 .search-bar input[type="text"] {
@@ -438,6 +439,7 @@ footer {
   text-align: center;
   margin-left: 150px;
   position: relative;
+  color: white;
 }
 
 /* Estilos de las películas */
@@ -447,6 +449,11 @@ footer {
   margin-bottom: 20px;
   position: relative;
   height: 358px;
+  color: white;
+}
+
+.pelicula a{
+  color: white;
 }
 
 .botones {

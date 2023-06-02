@@ -46,7 +46,7 @@ function cargarUser() {
     redirect: 'follow'
   };
 
-  fetch("http://10.238.91.26:3001/api/usuarios/perfil", requestOptions)
+  fetch(`${URL}/usuarios/perfil`, requestOptions)
     .then(response => response.json())
     .then(data => {
       console.log(data)
@@ -98,7 +98,7 @@ function cargarDatos() {
     redirect: 'follow'
   };
 
-  fetch("http://10.238.91.26:3001/api/movies", requestOptions)
+  fetch(`${URL}/movies`, requestOptions)
     .then(response => response.json())
     .then(data => {
       let html = ``
@@ -130,7 +130,7 @@ function cargarDatos(){
     redirect: 'follow'
   };
 
-  fetch("http://10.238.91.26:3001/api/movies", requestOptions)
+  fetch(`${URL}/movies`, requestOptions)
     .then(response => response.json())
     .then(data => {
       let html = ``
@@ -139,7 +139,7 @@ function cargarDatos(){
         html+= `
         <div class="pelicula">
         <img src=${item.poster} alt="Poster de pelicula">
-        <h3><a href="movie_info.html?id=${item._id}">${item.title}</a></h3>
+        <h3 class="peliculaTitle"><a href="movie_info.html?id=${item._id}">${item.title}</a></h3>
         <p>${releasedDate}</p>
         </div>
         `

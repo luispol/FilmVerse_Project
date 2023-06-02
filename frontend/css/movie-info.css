@@ -323,6 +323,10 @@ header {
   /* Oculta la barra de scroll en Firefox */
 }
 
+.contenedor-peliculas a{
+  color: white;
+}
+
 
 
 /*Bloque de estilo para personalizar el fondo scroll bar*/

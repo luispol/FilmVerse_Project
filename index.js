@@ -19,6 +19,7 @@ const whiteList = ['http://localhost:3001'];
 
 const corsOptions ={
     origin: function (origin, callback){
+        console.log(origin)
         if(whiteList.includes(origin)){
             // primer parametro es un error, el segundo es el que da una entrada
             callback(null, true)

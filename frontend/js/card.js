@@ -35,6 +35,46 @@ let nombre;
 // GET USER
 
 document.addEventListener("DOMContentLoaded", cargarUser)
+document.addEventListener("DOMContentLoaded",cargarDatos)
+
+function cargarDatos(){
+  token = localStorage.getItem("token")
+  if (!token){
+      location.href="login.html"
+  }
+  const requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
+
+  fetch(`${URL}/movies`, requestOptions)
+    .then(response => response.json())
+    .then(data => {
+      let html = ``
+      data.forEach((item)=>{
+        const releasedDate = item.released.substring(0, 10);
+        html+= `
+        <div class="pelicula">
+        <img src=${item.poster} alt="Poster de pelicula">
+        <h3><a href="movie_info.html?id=${item._id}">${item.title}</a></h3>
+        <p>${releasedDate}</p>
+        </div>
+        `
+      })
+      document.querySelector("#contenedor-peliculas").innerHTML=html
+    })
+    .catch(error => console.log('error', error));
+}
+
+
+
+
+
+
+
+
+
+
 
 function cargarUser() {
   token = localStorage.getItem("token")
@@ -51,7 +91,7 @@ function cargarUser() {
     redirect: 'follow'
   };
 
-  fetch("http://10.238.91.26:3001/api/usuarios/perfil", requestOptions)
+  fetch(`${URL}/usuarios/perfil`, requestOptions)
     .then(response => response.json())
     .then(data => {
       console.log(data)
@@ -120,7 +160,7 @@ function setComment(event) {
     redirect: 'follow'
   };
 
-  fetch(`http://10.238.91.26:3001/api/comments/${movieId}`, requestOptions)
+  fetch(`${URL}/comments/${movieId}`, requestOptions)
     .then(response => response.json())
     .then(result => {console.log(result);
                   location.href = `movie_info.html?id=${movieId}`})
@@ -154,7 +194,7 @@ function cargarComentarios() {
 
   console.log(movieId.toString())
 
-  fetch(`http://10.238.91.26:3001/api/comments/${movieId}`, requestOptions)
+  fetch(`${URL}/comments/${movieId}`, requestOptions)
     .then(response => response.json())
     .then(data => {
       console.log(data)
@@ -175,7 +215,7 @@ function cargarComentarios() {
             </div>
             <div class="info-item">
               <img src="./imgs/rating.png" alt="" class="info-label">
-              <p class="info-value">6/10</p>
+              <p class="info-value">${data.movie.rating}</p>
             </div>
             <div class="info-item">
               <img src="./imgs/genre.png" alt="" class="info-label">

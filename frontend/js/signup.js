@@ -29,7 +29,7 @@ function signup(event) {
     redirect: 'follow'
   };
   
-  fetch("http://10.238.91.26:3001/api/usuarios/", requestOptions)
+  fetch(`${URL}/usuarios/`, requestOptions)
     .then(response => response.json())
     .then(result => {
         console.log(result);

@@ -28,7 +28,7 @@ function guardar(event){
     "released": document.querySelector("#released").value,
     "countries": document.querySelector("#countries").value,
     "poster": document.querySelector("#poster").value,
-    "tomatoes.rating": document.querySelector("#rating").value,
+    "rating": document.querySelector("#rating").value,
     "trailer": document.querySelector("#trailer").value
     });
 
@@ -39,7 +39,7 @@ function guardar(event){
     redirect: 'follow'
     };
 
-    fetch("http://10.238.91.26:3001/api/movies", requestOptions)
+    fetch(`${URL}/movies`, requestOptions)
     .then(response => response.json())
     .then(data => {
         if(!data._id){

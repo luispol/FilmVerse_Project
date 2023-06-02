@@ -42,7 +42,7 @@ let token
       redirect: 'follow'
     };
 
-    fetch("http://10.238.91.26:3001/api/movies", requestOptions)
+    fetch(`${URL}/movies`, requestOptions)
       .then(response => response.json())
       .then(data => {
         let html = ``
@@ -65,6 +65,7 @@ let token
       .catch(error => console.log('error', error));
   }
 
+  //Funcion de eliminar pelicula
   function eliminarPelicula(id){
   
     if (confirm('¿Estás seguro de que deseas eliminar esta película?')) {
@@ -73,7 +74,7 @@ let token
         redirect: 'follow'
       };
     
-      fetch(`http://10.238.91.26:3001/api/movies/card?id=${id}`, requestOptions)
+      fetch(`${URL}/movies/card?id=${id}`, requestOptions)
         .then(response => response.json())
         .then(result => {
           console.log(result);
@@ -83,6 +84,11 @@ let token
     }
   }
 
+//Funcion de editar pelicula
+function editarPelicula(id){
+  localStorage.setItem('id',id)
+  location.href="editar-pelicula.html"
+}
 
 
 function cargarDatosUsuario(){
@@ -100,7 +106,7 @@ function cargarDatosUsuario(){
       redirect: 'follow'
     };
 
-    fetch("http://10.238.91.26:3001/api/usuarios/perfil", requestOptions)
+    fetch(`${URL}/usuarios/perfil`, requestOptions)
       .then(response => response.json())
       .then(data => {
         let html = ``
