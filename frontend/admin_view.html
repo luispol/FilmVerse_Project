@@ -7,11 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Filmverse</title>
   <link rel="stylesheet" href="./css/admin-view.css">
+
   <link rel="icon" href="./imgs/icono4.png" />
+  
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100&family=Open+Sans:wght@400;600&display=swap"
     rel="stylesheet" />
@@ -20,6 +23,7 @@
 
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+ 
   <!--Link para usar el CDN de fontawesome-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -42,12 +46,6 @@
         <li><a href="#Other">Genres</a></li>
       </ul>
     </nav>
-
-    <!--Searchbar-->
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Buscar">
-      <button id="searchButton" class="btn">Buscar</button>
-    </div>
 
     <!--ICONO PARA NOTIFICACIONES-->
     <button class="custom-button" onclick="toggleNotificationContent()">
@@ -72,11 +70,10 @@
         <div class="account-info">
           <div class="header">
             <div class="title">Actualmente en:</div>
-            </div>
+          </div>
+          <div class="account-details" id="usuarioInfo">
 
-            <div class="account-details" id="usuarioInfo">
-
-            </div>
+          </div>
         </div>
       </div>
     </button>
@@ -84,7 +81,8 @@
 
   <div class="contenedor">
     <!--El botón que nos permitirá añdir una nueva pelicula-->
-    <a class="boton-crearPelicula" onclick="location.href='agregar-peliculas.html'"><i class="fa-solid fa-plus"></i> Add a new movie</a>
+    <a class="boton-crearPelicula" onclick="location.href='agregar-peliculas.html'"><i class="fa-solid fa-plus"></i> Add
+      a new movie</a>
     <div class="contenedor-busqueda">
       <input type="text" name="buscar" id="buscar">
       <a class="boton-buscar">Search...</a>
@@ -97,7 +95,7 @@
 
   <!--Contenedor de peliculas-->
   <section class="contenedor-peliculas" id="contenedor-peliculas">
-    
+
   </section>
 
   <!--Sección del footer-->

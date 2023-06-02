@@ -1,3 +1,4 @@
+
 // Logica para boton de mostrar informacion de usuario
 function toggleAccountInfo() {
   const accountInfo = document.querySelector('.account-info');
@@ -29,6 +30,8 @@ function toggleNotificationContent() {
 let token;
 // al cargar la pagina se cargara nombre del usuario y se podra utilizar en cualquier lugar.
 let nombre;
+// IP CONEXION PARA FECTH
+const IP = "192.168.100.14"
 
 
 // Eventos
@@ -51,7 +54,7 @@ function cargarUser() {
     redirect: 'follow'
   };
 
-  fetch("http://192.168.100.14:3001/api/usuarios/perfil", requestOptions)
+  fetch(`http://${IP}:3001/api/usuarios/perfil`, requestOptions)
     .then(response => response.json())
     .then(data => {
       console.log(data)
@@ -79,6 +82,16 @@ function cargarUser() {
     })
     .catch(error => console.log('error', error));
 }
+
+//Funcion cerrar sesion
+function cerrar(){
+  localStorage.removeItem("token")
+  localStorage.removeItem("email")
+  localStorage.removeItem("password")
+  localStorage.removeItem("tipo")
+  location.href="login.html"
+}
+
 
 
 // SET COMMENTS
@@ -110,7 +123,7 @@ function setComment(event) {
     redirect: 'follow'
   };
 
-  fetch(`http://192.168.100.14:3001/api/comments/${movieId}`, requestOptions)
+  fetch(`http://${IP}:3001/api/comments/${movieId}`, requestOptions)
     .then(response => response.json())
     .then(result => {console.log(result);
                   location.href = `movie_info.html?id=${movieId}`})
@@ -144,7 +157,7 @@ function cargarComentarios() {
 
   console.log(movieId.toString())
 
-  fetch(`http://192.168.100.14:3001/api/comments/${movieId}`, requestOptions)
+  fetch(`http://${IP}:3001/api/comments/${movieId}`, requestOptions)
     .then(response => response.json())
     .then(data => {
       console.log(data)
@@ -183,10 +196,10 @@ function cargarComentarios() {
                 allowfullscreen></iframe>
             </div>
           </div>
-        </div>
-        <div class="overview">
+          <div class="overview">
           <h4 class="overview-title">Overview</h4>
           <p class="overview-description">${data.movie.fullplot}</p>
+        </div>
         </div>
       </div>
     </div>    

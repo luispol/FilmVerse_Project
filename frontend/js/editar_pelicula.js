@@ -1,6 +1,9 @@
 //Variables
 const formNuevaPelicula = document.querySelector("#formNuevaPelicula")
 let token
+// IP CONEXION PARA FECTH
+const IP = "192.168.100.14"
+
 
 //Eventos
 document.addEventListener("DOMContentLoaded",cargarDatos)

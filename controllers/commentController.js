@@ -1,7 +1,6 @@
 import Comments from "../models/comments.js";
 import movies from "../models/movie.js";
 
-
 const getComment = async (request, response) =>{
 
 }

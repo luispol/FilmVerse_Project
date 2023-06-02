@@ -1,7 +1,6 @@
 import express from 'express'
 import { registrar, autenticar, perfil } from '../controllers/usuarioController.js'
 import checkAuth from '../middleware/checkAuth.js'
-import authAdmin from '../middleware/authAdmin.js'
 
 const router = express.Router();
 

@@ -1,5 +1,5 @@
 // Import movies model
-import {request} from 'express';
+import { request } from 'express';
 import movie from "../models/movie.js";
 
 // CRUD ACTIONS
@@ -7,29 +7,29 @@ import movie from "../models/movie.js";
 // GETTING ALL MOVIES FOR CARROUSELS AND OTHERS
 // We probably gonna need to filter this better.
 const getAllMovies = async (request, response) => {
-    // We dont need filter the data in this 
-    const movies = await movie.find();
-    response.json(movies);
+  // We dont need filter the data in this 
+  const movies = await movie.find();
+  response.json(movies);
 };
 
 const getMoviesCard = async (request, response) => {
-    // We dont need filter the data in this 
-    const movies = await movie.find({ _id: request.query.id });
-    // try in postman, Example: localhost:3001/api/movies/card?id=64741fc21a010ea6c8fb068d
-    console.log(movies)
-    response.json(movies);
+  // We dont need filter the data in this 
+  const movies = await movie.find({ _id: request.query.id });
+  // try in postman, Example: localhost:3001/api/movies/card?id=64741fc21a010ea6c8fb068d
+  console.log(movies)
+  response.json(movies);
 };
 
 const setMovie = async (request, response) => {
-    const movies = new movie(request.body);
-    console.log(request.body);
-    try {
-        const movieSave = await movies.save();
-        console.log(movieSave);
-        response.json(movieSave);
-    } catch (error) {
-        console.log(`An error ocurred while inserting the movie: ${error}`);
-    }
+  const movies = new movie(request.body);
+  console.log(request.body);
+  try {
+    const movieSave = await movies.save();
+    console.log(movieSave);
+    response.json(movieSave);
+  } catch (error) {
+    console.log(`An error ocurred while inserting the movie: ${error}`);
+  }
 };
 
 //  Try this body in postman
@@ -45,37 +45,51 @@ const setMovie = async (request, response) => {
 */
 
 const editMovie = async (request, response) => {
-    try {
+  try {
     // try in postman, Example: localhost:3001/api/movies/card?id=64741fc21a010ea6c8fb068d
-      const updatedMovie = await movie.findOneAndUpdate(
-        { _id: request.query.id },
-        request.body,
-        { new: true }
-      );
-      response.json(updatedMovie);
-    } catch (error) {
-      console.log(`An error occurred while updating the movie: ${error}`);
-      response.status(500).json({ error: 'Internal server error' });
-    }
-  };
-  
-  const deleteMovie = async (request, response) => {
-    // try in postman, Example: localhost:3001/api/movies/card?id=64741fc21a010ea6c8fb068d
-    try {
-      const deletedMovie = await movie.findOneAndDelete({ _id: request.query.id });
-      response.json(deletedMovie);
-    } catch (error) {
-      console.log(`An error occurred while deleting the movie: ${error}`);
-      response.status(500).json({ error: 'Internal server error' });
-    }
-  };
-  
+    const updatedMovie = await movie.findOneAndUpdate(
+      { _id: request.query.id },
+      request.body,
+      { new: true }
+    );
+    response.json(updatedMovie);
+  } catch (error) {
+    console.log(`An error occurred while updating the movie: ${error}`);
+    response.status(500).json({ error: 'Internal server error' });
+  }
+};
+
+const deleteMovie = async (request, response) => {
+  // try in postman, Example: localhost:3001/api/movies/card?id=64741fc21a010ea6c8fb068d
+  try {
+    const deletedMovie = await movie.findOneAndDelete({ _id: request.query.id });
+    response.json(deletedMovie);
+  } catch (error) {
+    console.log(`An error occurred while deleting the movie: ${error}`);
+    response.status(500).json({ error: 'Internal server error' });
+  }
+};
+
+
+// buscar peliculas
+const searchMovies = async (request, response) => {
+  const { title } = request.body;
+  try {
+    console.log(title);
+    const movies = await movie.find({ title: { $regex: title, $options: 'i' } });
+    response.json(movies);
+  } catch (error) {
+    console.log(`An error occurred while searching for movies: ${error}`);
+  }
+};
+
 
 // EXPORTING
 export {
-    getAllMovies,
-    getMoviesCard,
-    setMovie,
-    editMovie,
-    deleteMovie
+  getAllMovies,
+  getMoviesCard,
+  setMovie,
+  editMovie,
+  deleteMovie,
+  searchMovies
 }

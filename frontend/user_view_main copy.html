@@ -2,6 +2,7 @@
 <html lang="en">
 
 <!--TODO EL HEAD PODRA ESTAR SEPARADO EN UNA CARPETA PARTIALS PARA REUTILIZAR PROPIEDADES-->
+
 <head>
   <!--CONFIGURACIÓN DE PÁGINA-->
   <meta charset="UTF-8" />
@@ -9,8 +10,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FilmVerse</title>
 
-  <!-- ICONO -->
+  <!-- ICONOS -->
   <link rel="icon" href="./imgs/icono4.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
   <!-- CUSTOM CSS -->
   <link rel="stylesheet" href="./css/principal.css" />
@@ -44,10 +46,49 @@
         <li><a href="#Other">Genres</a></li>
       </ul>
     </nav>
-    <!--Login bottom-->
-    <a href="./login.html" class="btn"> Sign In </a>
+    <!--Searchbar-->
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Buscar">
+      <button id="searchButton" class="btn">Buscar</button>
+    </div>
+
+    <!--ICONO PARA NOTIFICACIONES-->
+    <button class="custom-button" onclick="toggleNotificationContent()">
+      <div class="button-content">
+        <span class="icon">
+          <i class="fas fa-bell"></i>
+        </span>
+        <div class="notification-content">
+          <div class="account-details">
+            <div class="title">Notificaciones</div>
+          </div>
+        </div>
+      </div>
+    </button>
+
+    <!--INFORMACION DE CUENTA DE USUARIOS-->
+    <button class="custom-button" onclick="toggleAccountInfo()">
+      <div class="button-content">
+        <span class="icon">
+          <i class="fas fa-user"></i>
+        </span>
+        <div class="account-info">
+          <div class="header">
+            <div class="title">Actualmente en</div>
+          </div>
+          <div class="avatar">
+            <img class="avatar-image" src="https://i.pinimg.com/75x75_RS/33/78/92/33789287dc81015f715d0b30d630ec98.jpg"
+              alt="Avatar">
+          </div>
+          <div class="account-details">
+            <div class="name">William Perez</div>
+            <div class="category">Personal</div>
+            <div class="email">william.perez@catolica.edu.sv</div>
+          </div>
+        </div>
+      </div>
+    </button>
   </header>
-  
   <main>
     <!-- Home -->
     <section class="home swiper" id="home">
@@ -68,6 +109,7 @@
                 Big <br />
                 Hero
               </h1>
+              <a href="#" class="btn">Review</a>
             </div>
           </div>
         </div>
@@ -85,6 +127,7 @@
                 Kubo <br />
                 Two Strings
               </h1>
+              <a href="#" class="btn">Review</a>
             </div>
           </div>
         </div>
@@ -98,6 +141,7 @@
                 Joker <br />
                 Origin
               </h1>
+              <a href="./movie_Info.html" class="btn">Review</a>
             </div>
           </div>
         </div>
@@ -111,7 +155,124 @@
 
     <!--Contenedor de peliculas-->
     <section class="contenedor-peliculas">
-      <div id="contenedor-peliculas">
+      <div class="pelicula">
+        <img src="./imgs/posteres-peliculas/posterDune.jpg" alt="Poster de Dune">
+        <h3>Dune</h3>
+        <p>15 sept 2021</p>
+      </div>
+
+      <div class="pelicula">
+        <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+        <h3>Avatar: El sentido del agua</h3>
+        <p>15 dec 2022</p>
+      </div>
+
+      <div class="pelicula">
+        <img src="./imgs/posteres-peliculas/posterDune.jpg" alt="Poster de Dune">
+        <h3>Dune</h3>
+        <p>15 sept 2021</p>
+      </div>
+
+      <div class="pelicula">
+        <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+        <h3>Avatar: El sentido del agua</h3>
+        <p>15 dec 2022</p>
+      </div>
+
+      <div class="pelicula">
+        <img src="./imgs/posteres-peliculas/posterDune.jpg" alt="Poster de Dune">
+        <h3>Dune</h3>
+        <p>15 sept 2021</p>
+      </div>
+
+      <div class="pelicula">
+        <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+        <h3>Avatar: El sentido del agua</h3>
+        <p>15 dec 2022</p>
+      </div>
+
+      <div class="pelicula">
+        <img src="./imgs/posteres-peliculas/posterDune.jpg" alt="Poster de Dune">
+        <h3>Dune</h3>
+        <p>15 sept 2021</p>
+      </div>
+
+      <div class="pelicula">
+        <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+        <h3>Avatar: El sentido del agua</h3>
+        <p>15 dec 2022</p>
+      </div>
+
+      <div class="pelicula">
+        <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+        <h3>Avatar: El sentido del agua</h3>
+        <p>15 dec 2022</p>
+      </div>
+
+      <div class="pelicula">
+        <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+        <h3>Avatar: El sentido del agua</h3>
+        <p>15 dec 2022</p>
+      </div>
+
+      <div class="pelicula">
+        <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+        <h3>Avatar: El sentido del agua</h3>
+        <p>15 dec 2022</p>
+      </div>
+
+      <div class="pelicula">
+        <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+        <h3>Avatar: El sentido del agua</h3>
+        <p>15 dec 2022</p>
+      </div>
+
+      <div class="pelicula">
+        <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+        <h3>Avatar: El sentido del agua</h3>
+        <p>15 dec 2022</p>
+      </div>
+
+      <div class="pelicula">
+        <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+        <h3>Avatar: El sentido del agua</h3>
+        <p>15 dec 2022</p>
+      </div>
+
+      <div class="pelicula">
+        <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+        <h3>Avatar: El sentido del agua</h3>
+        <p>15 dec 2022</p>
+      </div>
+
+      <div class="pelicula">
+        <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+        <h3>Avatar: El sentido del agua</h3>
+        <p>15 dec 2022</p>
+      </div>
+
+      <div class="pelicula">
+        <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+        <h3>Avatar: El sentido del agua</h3>
+        <p>15 dec 2022</p>
+      </div>
+
+      <div class="pelicula">
+        <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+        <h3>Avatar: El sentido del agua</h3>
+        <p>15 dec 2022</p>
+      </div>
+
+      <div class="pelicula">
+        <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+        <h3>Avatar: El sentido del agua</h3>
+        <p>15 dec 2022</p>
+      </div>
+
+      <div class="pelicula">
+        <img src="./imgs/posteres-peliculas/posterAvatar.jpg" alt="Poster de Avatar: El sentido del agua">
+        <h3>Avatar: El sentido del agua</h3>
+        <p>15 dec 2022</p>
       </div>
     </section>
 
@@ -176,11 +337,11 @@
 
   <!-- Link to custom JS -->
   <script src="./js/main.js"></script>
-  <script src="./js/user_view.js"></script>
 
   <!-- MDB -->
   <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.js"></script>
   -->
+  <script src="./js/users.js"></script>
 </body>
 
 </html>

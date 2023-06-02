@@ -74,6 +74,7 @@
     display: flex;
     column-gap: 5rem;
     list-style: none;
+    margin-right: 530px;
   }
   
   .navbar li {
@@ -369,7 +370,6 @@ footer {
   flex-direction: column;
 }
 
-.notification-message {}
 
 .notification-content {
   display: flex;
@@ -382,7 +382,7 @@ footer {
 
 .notification-content.visible {
   display: block;
-  margin-right: 9.2%;
+  margin-right: 7.0%;
 }
 
 .notification-content {
@@ -525,7 +525,10 @@ footer {
   font-size: 18px;
   margin-top: 10px;
   margin-bottom: 5px;
+}
 
+.pelicula .enlace {
+  color: white;
 }
 
 /*Bloque de estilo para las fecha de estreno de cada pelicula*/

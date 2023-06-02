@@ -65,6 +65,7 @@ header {
   display: flex;
   column-gap: 5rem;
   list-style: none;
+  margin-right: 530px;
 }
 
 .navbar li {
@@ -251,7 +252,7 @@ header {
 
 .notification-content.visible {
   display: block;
-  margin-right: 9.2%;
+  margin-right: 7.0%;
 }
 
 .notification-content {

@@ -1,10 +1,13 @@
 
 // COMUNICACION CON API - MICROTRANSACCIONES
 // CODIGO GENERADO POR POSTMAN
-
+// Variables
 const formLogin = document.querySelector("#formLogin");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
+// IP CONEXION PARA FECTH
+const IP = "192.168.100.14"
+
 
 // evento para form
 formLogin.addEventListener("submit", login);
@@ -30,7 +33,7 @@ function login(event) {
     redirect: 'follow'
   };
 
-  fetch("http://192.168.100.14:3001/api/usuarios/login", requestOptions)
+  fetch(`http://${IP}:3001/api/usuarios/login`, requestOptions)
     // promesas, esas se ejecutan al futuro cuando tengo el resultado.
     // respuesta a valor de json
     .then(response => response.json())

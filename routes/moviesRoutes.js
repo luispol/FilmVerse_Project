@@ -5,11 +5,9 @@ import {
     getMoviesCard,
     setMovie,
     editMovie,
-    deleteMovie
+    deleteMovie,
+    searchMovies
 } from "../controllers/movieController.js"
-
-// tambien verificara que es un administrador al intentar ingresar
-import authAdmin from "../middleware/authAdmin.js"
 
 const router = express.Router();
 
@@ -21,5 +19,9 @@ router.route('/card')
     .get(getMoviesCard)
     .put(editMovie)
     .delete(deleteMovie);
+
+// Ruta de búsqueda de películas
+router.route('/search')
+    .post(searchMovies);
 
 export default router;

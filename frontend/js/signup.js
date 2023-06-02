@@ -1,6 +1,9 @@
 // COMUNICACION CON API - MICROTRANSACCIONES
 // CODIGO GENERADO POR POSTMAN
 
+// variables
+// IP CONEXION PARA FECTH
+const IP = "192.168.100.14"
 const formSignup = document.querySelector("#signupForm");
 const username = document.querySelector("#username")
 const email = document.querySelector("#email");
@@ -29,7 +32,7 @@ function signup(event) {
     redirect: 'follow'
   };
   
-  fetch("http://192.168.100.14:3001/api/usuarios/", requestOptions)
+  fetch(`http://${IP}:3001/api/usuarios/`, requestOptions)
     .then(response => response.json())
     .then(result => {
         console.log(result);
