@@ -33,7 +33,7 @@ function login(event) {
     redirect: 'follow'
   };
 
-  fetch(`http://${IP}:3001/api/usuarios/login`, requestOptions)
+  fetch(`${URL}/usuarios/login`, requestOptions)
     // promesas, esas se ejecutan al futuro cuando tengo el resultado.
     // respuesta a valor de json
     .then(response => response.json())

@@ -32,7 +32,7 @@ function signup(event) {
     redirect: 'follow'
   };
   
-  fetch(`http://${IP}:3001/api/usuarios/`, requestOptions)
+  fetch(`${URL}/usuarios/`, requestOptions)
     .then(response => response.json())
     .then(result => {
         console.log(result);

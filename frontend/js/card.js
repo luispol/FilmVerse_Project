@@ -54,7 +54,7 @@ function cargarUser() {
     redirect: 'follow'
   };
 
-  fetch(`http://${IP}:3001/api/usuarios/perfil`, requestOptions)
+  fetch(`${URL}/usuarios/perfil`, requestOptions)
     .then(response => response.json())
     .then(data => {
       console.log(data)
@@ -123,7 +123,7 @@ function setComment(event) {
     redirect: 'follow'
   };
 
-  fetch(`http://${IP}:3001/api/comments/${movieId}`, requestOptions)
+  fetch(`${URL}/comments/${movieId}`, requestOptions)
     .then(response => response.json())
     .then(result => {console.log(result);
                   location.href = `movie_info.html?id=${movieId}`})
@@ -157,7 +157,7 @@ function cargarComentarios() {
 
   console.log(movieId.toString())
 
-  fetch(`http://${IP}:3001/api/comments/${movieId}`, requestOptions)
+  fetch(`${URL}/comments/${movieId}`, requestOptions)
     .then(response => response.json())
     .then(data => {
       console.log(data)
@@ -178,7 +178,7 @@ function cargarComentarios() {
             </div>
             <div class="info-item">
               <img src="./imgs/rating.png" alt="" class="info-label">
-              <p class="info-value">6/10</p>
+              <p class="info-value">${data.movie.rating}</p>
             </div>
             <div class="info-item">
               <img src="./imgs/genre.png" alt="" class="info-label">
@@ -190,7 +190,7 @@ function cargarComentarios() {
           <div class="info-item">
             <a href="#" class="btnIframe" id="watch-trailer-btn">Watch Trailer</a>
             <div class="video-container" id="video-container">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/t433PEQGErc"
+              <iframe width="560" height="315" src="${data.movie.trailer}"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>

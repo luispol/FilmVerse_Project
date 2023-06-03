@@ -49,7 +49,7 @@ function cargarUser() {
     redirect: 'follow'
   };
 
-  fetch(`http://${IP}:3001/api/usuarios/perfil`, requestOptions)
+  fetch(`${URL}/usuarios/perfil`, requestOptions)
     .then(response => response.json())
     .then(data => {
       console.log(data)
@@ -100,7 +100,7 @@ function cargarDatos(){
     redirect: 'follow'
   };
 
-  fetch(`http://${IP}:3001/api/movies`, requestOptions)
+  fetch(`${URL}/movies`, requestOptions)
     .then(response => response.json())
     .then(data => {
       let html = ``
@@ -148,7 +148,7 @@ function buscarPelicula() {
     redirect: 'follow'
   };
 
-  fetch(`http://${IP}:3001/api/movies/search`, requestOptions)
+  fetch(`${URL}/movies/search`, requestOptions)
     .then(response => response.json())
     .then(data => {
       console.log(data);

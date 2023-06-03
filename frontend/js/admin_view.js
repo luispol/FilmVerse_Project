@@ -48,7 +48,7 @@ function cargarDatos() {
     redirect: 'follow'
   };
 
-  fetch(`http://${IP}:3001/api/movies`, requestOptions)
+  fetch(`${URL}/movies`, requestOptions)
     .then(response => response.json())
     .then(data => {
       let html = ``
@@ -64,12 +64,13 @@ function cargarDatos() {
           <button class="eliminar" onClick="eliminarPelicula('${item._id}')")><i class="fa-solid fa-trash"></i></button>
           </div>
           </div>
-          `
+      `
       })
       document.querySelector("#contenedor-peliculas").innerHTML = html
     })
     .catch(error => console.log('error', error));
 }
+
 
 function eliminarPelicula(id) {
 
@@ -79,7 +80,7 @@ function eliminarPelicula(id) {
       redirect: 'follow'
     };
 
-    fetch(`http://${IP}:3001/api/movies/card?id=${id}`, requestOptions)
+    fetch(`${URL}/movies/card?id=${id}`, requestOptions)
       .then(response => response.json())
       .then(result => {
         console.log(result);
@@ -89,6 +90,11 @@ function eliminarPelicula(id) {
   }
 }
 
+//Funcion de editar pelicula
+function editarPelicula(id) {
+  localStorage.setItem('id', id)
+  location.href = "editar-pelicula.html"
+}
 
 
 function cargarDatosUsuario() {
@@ -106,21 +112,21 @@ function cargarDatosUsuario() {
     redirect: 'follow'
   };
 
-  fetch(`http://${IP}:3001/api/usuarios/perfil`, requestOptions)
-    .then(response => response.json())
-    .then(data => {
-      let html = ``
+  fetch(`${URL}/usuarios/perfil`, requestOptions)
+  .then(response => response.json())
+  .then(data => {
+    let html = ``
 
-      html += `
-          <div class="name">${data.nombre}</div>
-          <div class="category">Admin</div>
-          <div class="email">${data.email}</div>
-          <div class="logaut"><a onclick="cerrar()">Cerrar Sesion</a></div>
-          `
+      html+=`
+      <div class="name">${data.nombre}</div>
+      <div class="category">Admin</div>
+      <div class="email">${data.email}</div>
+      <div class="logaut"><a onclick="cerrar()">Cerrar Sesion</a></div>
+      `
 
-      document.querySelector("#usuarioInfo").innerHTML = html
-    })
-    .catch(error => console.log('error', error));
+    document.querySelector("#usuarioInfo").innerHTML=html
+  })
+  .catch(error => console.log('error', error));
 }
 function cerrar() {
   localStorage.removeItem("token")
@@ -142,13 +148,13 @@ function buscarPelicula() {
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
-  
+
   var raw = JSON.stringify({
     // En caso que uno este vacio buscara en otro valor y viceversa
     // al no encontrar nada devolvera todas las peliculas
-    "title": titulo.value 
+    "title": titulo.value
   });
-  
+
   console.log(titulo.value)
 
   var requestOptions = {
@@ -158,7 +164,7 @@ function buscarPelicula() {
     redirect: 'follow'
   };
 
-  fetch(`http://${IP}:3001/api/movies/search`, requestOptions)
+  fetch(`${URL}/movies/search`, requestOptions)
     .then(response => response.json())
     .then(data => {
       console.log(data);

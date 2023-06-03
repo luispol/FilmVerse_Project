@@ -39,9 +39,12 @@ const movieSchema = new mongoose.Schema({
     },
     rating: {
         type: Number,
-        require: false,
-        integer: true // Integer validation
-
+        required: true,
+    },
+    trailer: {
+        type:String,
+        trim:true,
+        required:true
     }
 }, {
     timestamps: true
