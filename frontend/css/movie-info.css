@@ -374,7 +374,10 @@ header {
   font-size: 18px;
   margin-top: 10px;
   margin-bottom: 5px;
+}
 
+.pelicula .enlace {
+  color: white;
 }
 
 /*Bloque de estilo para las fecha de estreno de cada pelicula*/

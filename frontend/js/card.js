@@ -30,14 +30,43 @@ function toggleNotificationContent() {
 let token;
 // al cargar la pagina se cargara nombre del usuario y se podra utilizar en cualquier lugar.
 let nombre;
-// IP CONEXION PARA FECTH
-const IP = "192.168.100.14"
-
 
 // Eventos
 // GET USER
 
 document.addEventListener("DOMContentLoaded", cargarUser)
+document.addEventListener("DOMContentLoaded",cargarDatos)
+
+function cargarDatos(){
+  token = localStorage.getItem("token")
+  if (!token){
+      location.href="login.html"
+  }
+  const requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
+
+  fetch(`${URL}/movies`, requestOptions)
+    .then(response => response.json())
+    .then(data => {
+      let html = ``
+      data.forEach((item)=>{
+        const releasedDate = item.released.substring(0, 10);
+        html+= `
+        <div class="pelicula">
+        <img src=${item.poster} alt="Poster de pelicula">
+        <h3><a class="enlace" href="movie_info.html?id=${item._id}">${item.title}</a></h3>
+        <p>${releasedDate}</p>
+        </div>
+        `
+      })
+      document.querySelector("#contenedor-peliculas").innerHTML=html
+    })
+    .catch(error => console.log('error', error));
+}
+
+
 
 function cargarUser() {
   token = localStorage.getItem("token")

@@ -37,6 +37,10 @@
     position: relative;
     height: 358px;
   }
+
+  .pelicula .enlace {
+    color: white;
+  }
   
   /*Bloque de estilo para personalizar el fondo scroll bar*/
   .contenedor-peliculas::-webkit-scrollbar {
